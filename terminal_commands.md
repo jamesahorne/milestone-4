@@ -19,3 +19,15 @@ Initialise Git repository
 
 Add SQLite file to .gitignore
 echo '*.sqlite3' >> .gitignore
+
+Create an app called "accounts"
+// django-admin startapp accounts
+
+Add "accounts" to installed apps
+// INSTALLED_APPS[... + 'accounts']
+
+Do migrations
+// python3 manage.py migrate
+
+Create superuser
+// python3 manage.py createsuperuser
