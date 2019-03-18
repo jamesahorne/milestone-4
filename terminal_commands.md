@@ -16,6 +16,8 @@ Instead of typing out the long string below, now just type "run"
 Initialise Git repository
 // git init
 // git status
+//git remote add origin https://github.com/jamesahorne/milestone-4.git
+// git push -u origin master
 
 Add SQLite file to .gitignore
 echo '*.sqlite3' >> .gitignore
@@ -31,3 +33,5 @@ Do migrations
 
 Create superuser
 // python3 manage.py createsuperuser
+
+
