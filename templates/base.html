@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block page_title %}{% endblock %}</title>
+    <title>Name | {% block page_title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -13,10 +13,13 @@
     <header>
         <nav>
             <ul>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Profile</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="#">Register</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
@@ -33,7 +36,7 @@
     {% if messages %}
     <div>
         {% for message in messages %}
-            {{ message }} 
+            {{ message }}
         {% endfor %}
     </div>
     {% endif %}
