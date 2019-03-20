@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
-{% block page_title %}Home{% endblock %}
-{% block page_header %}Home{% endblock %}
+{% block page_title %}Log In{% endblock %}
+{% block page_header %}Log In{% endblock %}
 {% block content %}
 
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ login_form }}
-        <button type="submit">Login</button>
-    </form>
+<form method="POST">
+    {% csrf_token %}
+    {{ login_form }}
+    <button type="submit">Log In</button>
+</form>
+
+<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 
 
 {% endblock %}
