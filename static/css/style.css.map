@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAa;EACT,WAAW,EAAE,IAAI",
+"sources": ["partials/forms.scss"],
+"names": [],
+"file": "style.css"
+}
