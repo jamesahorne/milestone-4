@@ -32,6 +32,21 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log In</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}">Register</a></li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'view_cart' %}">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
+                    </li>
+
+                    <li class="nav-item" class="display">
+                        <form action="{% url 'search' %}" method="GET">
+                            <input type="text" name="q">
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -45,10 +60,16 @@
     
     
         {% if messages %}
-        <div>
-            {% for message in messages %} {{ message }} {% endfor %}
+        <div class="alert alert-success">
+            <div class="messages">
+                {% for message in messages %} {{ message }} {% endfor %}
+            </div>
         </div>
-        {% endif %} {% block content %}{% endblock %}
+        {% endif %}
+
+
+        {% block content %}{% endblock %}
+
     </div>
 
 
