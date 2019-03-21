@@ -5,10 +5,6 @@ from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 
-def index(request):
-    ''' return index.html '''
-    return render(request, 'index.html')
-
 @login_required
 def logout(request):
     ''' Logout '''
