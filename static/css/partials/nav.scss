@@ -1,0 +1,23 @@
+/*        Nav        */
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+    
+    /*
+    
+    make this color a variable?
+    
+    where is label-warning??? Can't find it being used
+    
+    */
+    
+}
