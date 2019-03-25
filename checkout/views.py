@@ -8,6 +8,7 @@ from django.utils import timezone
 from products.models import Product
 import stripe
 
+
 stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
@@ -28,7 +29,7 @@ def checkout(request):
                     order = order,
                     product = product, 
                     quantity = quantity)
-                order_form.save()
+                order_line_item.save()
             try:
                 customer = stripe.Charge.create(
                     amount = int(total * 100),
