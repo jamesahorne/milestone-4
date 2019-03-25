@@ -4,14 +4,14 @@
 {% block page_title %}Checkout{% endblock %}
 {% block page_header %}Checkout{% endblock %}
 
-{% block checkout_js %}
-<script src="https://js.stripe.com/v3/"></script>
+{% block stripe_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
     //<![CDATA[
     Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
-<script type="text/javascript" src="{% static 'js/checkout.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
     {% for item in cart_items %}
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
         <div class="panel-body">
-            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product_image }}')"></div>
+            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
             <div class="caption">
                 <h3>{{ item.product.name }}</h3>
                 <p class="product-description">{{ item.product.description }}</p>
@@ -43,19 +43,17 @@
     <div id="credit-card-errors" style="display: none;">
         <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
-    
     <div class="form-group col-md-6">
         {{ order_form | as_bootstrap }}
     </div>
-    
     <div class="form-group col-md-6">
         {{ payment_form | as_bootstrap }}
     </div>
-    
     {% csrf_token %}
     <div class="form-group col-md-12">
         <input type="submit" name="commit" class="btn btn-primary" id="submit_payment_btn" value="Submit Payment">
     </div>
 </form>
+
 
 {% endblock %}
