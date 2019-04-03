@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
-{% block page_title %}Tickets{% endblock %}
-{% block page_header %}Tickets{% endblock %}
+{% block page_title %}Buy Tickets{% endblock %}
+{% block page_header %}Buy Tickets{% endblock %}
 
 {% block content %}
 
@@ -14,10 +14,10 @@
             <h3>{{ product.name }}</h3>
             <p class="product-description">{{ product.description }}</p>
             <p>{{ product.price }}</p>
-            
+
             <form method="POST" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
-                <div class="input-class">
+            <div class="input-class">
                     <input class="form-control" type="number" name="quantity" min="1" max="999" placeholder="Quantity">
                     <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Add</button>
