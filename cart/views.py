@@ -7,20 +7,15 @@ def view_cart(request):
 
 def add_to_cart(request, id):
     ''' Add product (and quantity) to cart '''
-    quantity=int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
-    cart[id] = cart.get(id, quantity)
+    cart[id] = cart.get(id)
     request.session['cart'] = cart
-    return redirect(reverse('products'))
+    return redirect(reverse('view_cart'))
 
 
-def edit_cart(request, id):
-    ''' Edit quantity of a product in the cart '''
-    quantity = int(request.POST.get('quantity'))
+def delete_cart(request, id):
+    ''' Remove a product from the cart '''
     cart = request.session.get('cart', {})
-    if quantity > 0:
-        cart[id] = quantity
-    else:
-        cart.pop(id)
+    cart.pop(id)
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
