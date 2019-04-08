@@ -16,18 +16,22 @@
                 <h3>{{ item.product.name }}</h3>
                 <p class="product-description">{{ item.product.description }}</p>
                 <p>{{ item.product.price }}</p>
-                
+
+
                 <p>
-                    <form class="form-inline" method="POST" action="{% url 'edit_cart' item.id %}">
+                    <form class="form-inline" method="POST" action="{% url 'delete_cart' item.id %}">
                         {% csrf_token %}
-                        <div class="form-group">
+                        
+    <!--Can I edit the below code for the remove item button?
+                        
+                        <!--div class="form-group">
                             <label for="exampleInputAmount" class="sr-only">New Qty</label>
                             <div class="input-group">
                                 <div class="input-group-addon">Qty</div>
                                 <input class="form-control" type="number" name="quantity" min="0" max="999">
                                 <div class="input-group-addon">{{ item.quantity }}</div>
                             </div>
-                        </div>
+                        </div-->
                         <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>  Amend</button>
                     </form>
                 </p>
@@ -36,6 +40,8 @@
     </div>
     {% endfor %}
 </div>
+
+
 <div class="row">
     <p>Total</p>
     <p><i class="fas fa-pound-sign" aria-hidden="true"></i>{{ total }}</p>
