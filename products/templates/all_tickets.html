@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block page_title %}All Tickets{% endblock %}
+{% block page_header %}All Tickets{% endblock %}
+
+{% block content %}
+
+
+<div class="row row-flex">
+    {% for ticket in tickets %}
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+        <div class="panel-body">
+            <h3>{{ ticket.issue_name }}</h3>
+            <p>{{ ticket.type }}</p>
+            <p class="product-description">{{ ticket.description | truncatechars:70 }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
