@@ -27,6 +27,7 @@ class Ticket(models.Model):
     published_date = models.DateTimeField(blank=True, null=True,
                                           default=timezone.now)
     views = models.IntegerField(default=0)
+    upvotes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.issue_name
