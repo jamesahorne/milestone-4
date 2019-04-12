@@ -13,6 +13,14 @@
             <h3>{{ ticket.issue_name }}</h3>
             <p>{{ ticket.type }}</p>
             <p class="product-description">{{ ticket.description | truncatechars:70 }}</p>
+            <form method="POST" action="{% url 'full_detail' ticket.id %}">
+                {% csrf_token %}
+                <div class="input-class">
+                    <span class="input-group-btn">
+                        <button class="btn" type="submit">See more</button>
+                    </span>
+                </div>
+            </form>
         </div>
     </div>
     {% endfor %}
