@@ -1,32 +1,61 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
-{% block page_title %}Buy Tickets{% endblock %}
-{% block page_header %}Buy Tickets{% endblock %}
+{% block page_title %}Add A Ticket{% endblock %}
+{% block page_header %}Add A Ticket{% endblock %}
 
 {% block content %}
 
 
 <div class="row row-flex">
     {% for product in products %}
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+    <div class="col-offset-1 col-10 col-md-offset-0 col-md-4 display panel panel-default">
         <div class="panel-body">
             <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
             <h3>{{ product.name }}</h3>
-            <p class="product-description">{{ product.description }}</p>
-            <p>{{ product.price }}</p>
+            <p class="product-description">{{ product.description }}
 
-            <form method="POST" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-            <div class="input-class">
-                    <input class="form-control" type="number" name="quantity" min="1" max="999" placeholder="Quantity">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add</button>
-                    </span>
+            {% if product.name == "Feature" %}
+            *</p>
+            {% else %}
+            </p>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-12">
+                    {% if product.price > 0 %}
+                    <p>£{{ product.price }}</p>
+                    {% else %}
+                    <p>FREE</p>
+                    {% endif %}
                 </div>
-            </form>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    {% if product.name == "Bug" %}
+                    <span class="input-group-btn">
+                        <a class="btn btn-success" href="{% url 'bug' %}">Add</a>
+                    </span>
+                    {% else %}
+                    <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        <div class="input-class">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">Add</button>
+                            </span>
+                        </div>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}
+</div>
+
+
+<div class="row row-flex">
+    <p><strong>*</strong> A feature needs enough paid upvotes to be implemented.</p>
 </div>
 
 
