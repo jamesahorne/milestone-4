@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block page_title %}Feature Form{% endblock %}
+{% block page_header %}Feature Form{% endblock %}
+
+{% block content %}
+
+
+<form method="POST">
+    {% csrf_token %}
+    {{ ticket_form | as_bootstrap }}
+    <button type="submit">Submit</button>
+</form>
+
+
+{% endblock %}
