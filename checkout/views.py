@@ -11,7 +11,7 @@ import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
 
-@login_required()
+@login_required
 def checkout(request):
     if request.method=="POST":
         order_form = OrderForm(request.POST)
@@ -40,7 +40,7 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid.")
                 request.session['cart'] = {}
-                return redirect(reverse('all_tickets'))
+                return redirect(reverse('feature_or_upvote'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
