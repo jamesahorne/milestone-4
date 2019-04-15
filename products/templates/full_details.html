@@ -1,35 +1,21 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block page_title %}Ticket Detail{% endblock %}
-{% block page_header %}Ticket Detail{% endblock %}
+{% block page_header %}{{ ticket.issue_name }}{% endblock %}
 
 {% block content %}
 
 
 <div class="row row-flex">
-    {% for ticket in tickets %}
     <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-        <div class="panel-body">
-            <h3>{{ ticket.issue_name }}</h3>
-            <p>{{ ticket.type }}</p>
-            <p class="product-description">{{ ticket.description }}</p>
-            <p>{{ ticket.status }}</p>
-            <p>{{ ticket.urgent }}</p>
-            <p>{{ ticket.published_date }}</p>
-            <p>{{ ticket.views }}</p>
-
-            <form method="POST" action="{% url 'add_to_cart' product.id %}">
-                {% csrf_token %}
-            <div class="input-class">
-                    <input class="form-control" type="number" name="quantity" min="1" max="999" placeholder="Quantity">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">Add</button>
-                    </span>
-                </div>
-            </form>
-        </div>
+        <p>Type: {{ ticket.type }}</p>
+        <p>Upvotes: {{ ticket.upvotes }} (Do a fancy upvote button with <i class="far fa-thumbs-up"></i> etc)</p>
+        <p class="product-description">{{ ticket.description }}</p>
+        <p>Status: {{ ticket.status }}</p>
+        <p>Urgent: {{ ticket.urgent|yesno:"Yes,No" }}</p>
+        <p>Published: {{ ticket.published_date }}</p>
+        <p>Views: {{ ticket.views }}</p>
     </div>
-    {% endfor %}
 </div>
 
 
