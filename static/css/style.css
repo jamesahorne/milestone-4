@@ -1,4 +1,4 @@
-/*        Nav        */
+/*        Forms        */
 .accountform {
   padding-top: 20px; }
 
@@ -21,19 +21,25 @@
   
   */ }
 
+.show > .nav-link {
+  color: rgba(255, 255, 255, 0.75); }
+
+.dropdown-menu {
+  background-color: inherit;
+  border: inherit;
+  padding: 0;
+  margin: 0; }
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.5); }
+
+.fas, .far {
+  width: 1.3rem; }
+
+@media screen and (min-width: 992px) {
+  .fas, .far {
+    display: none; } }
 /*        Pages        */
-/*
-
-.label-warning[href],
-    background-color: #c67605;
-    
-    
-    where is label-warning??? Can't find it being used
-    
-    
-}
-
-*/
 .product {
   background-size: contain;
   background-position: center center;
