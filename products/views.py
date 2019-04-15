@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Product, Ticket
@@ -48,4 +48,22 @@ def full_detail(request, pk):
     ticket = get_object_or_404(Ticket, pk=pk)
     ticket.views +=1
     ticket.save()
-    return render(request, 'full_detail.html', {"ticket": ticket})
+    return render(request, 'full_details.html', {"ticket": ticket})
+
+
+@login_required
+def feature_or_upvote(request):
+    return render(request, "feature_or_upvote.html")
+
+
+@login_required
+def upvote(request):
+    tickets = Ticket.objects.filter(type="Feature")
+    return render(request, "upvote.html", {"tickets": tickets})
+
+
+def add_upvote(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+    ticket.upvotes +=1
+    ticket.save()
+    return redirect(reverse('full_detail', pk))
