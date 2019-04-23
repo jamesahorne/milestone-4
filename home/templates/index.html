@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
+{% load static from staticfiles %}
 {% block page_title %}Home{% endblock %}
-{% block page_header %}Home{% endblock %}
+
+{% block some_js %}
+<script type="text/javascript" src="{% static 'js/typing.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 
 
+<div class="typing-height">
+    <h2 id="typing"></h2>
+    <h2 id="typing2"></h2>
+</div>
 
+<div class="down-icon">
+    <i class="fas fa-angle-down"></i>
+</div>
+
+
+<p id="typing3">Send in bug fixes or feature requests for your favourite sandwich filling site.</p>
 
 
 {% endblock %}
