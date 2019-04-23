@@ -14,10 +14,10 @@
             <h3>{{ product.name }}</h3>
             <p class="product-description">{{ product.description }}
 
-            {% if product.name == "Feature" %}
-            *</p>
-            {% else %}
+            {% if product.name == "Bug" %}
             </p>
+            {% else %}
+            *</p>
             {% endif %}
 
             <div class="row">
