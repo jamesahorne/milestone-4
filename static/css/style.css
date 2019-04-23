@@ -40,6 +40,9 @@
   .fas, .far {
     display: none; } }
 /*        Pages        */
+body {
+  box-sizing: border-box; }
+
 .product {
   background-size: contain;
   background-position: center center;
@@ -66,5 +69,13 @@
 
 .product-description {
   min-height: 40px; }
+
+.typing-height {
+  height: 50vh; }
+
+.down-icon {
+  margin-top: 33vh;
+  width: 100%;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
