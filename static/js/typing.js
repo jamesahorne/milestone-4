@@ -1,6 +1,8 @@
 $(document).ready(function() {
     setTimeout(typing, 500);
-    setTimeout(typing2, 1500);
+    setTimeout(typing2, 4000);
+    setTimeout(cursor, 2000);
+    setTimeout(cursor2, 1900);
 });
 
 
@@ -23,6 +25,16 @@ function typing2() {
     if (j < typingText2.length) {
         document.getElementById("typing2").innerHTML += typingText2.charAt(j);
         j++;
-        setTimeout(typing2, 55);
+        setTimeout(typing2, 90);
     }
+}
+
+
+function cursor() {
+    $('#cursor').hide()
+}
+
+
+function cursor2() {
+    document.getElementById('cursor2').style.display = 'inline';
 }
