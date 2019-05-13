@@ -1,3 +1,31 @@
+#cursor,
+#cursor2 {
+  animation: 1s blink step-end infinite; }
+
+#cursor2 {
+  display: none; }
+
+.typing-h3 {
+  display: inline; }
+
+@keyframes "blink" {
+  from,
+    to {
+    color: transparent; }
+  50% {
+    color: black; } }
+@-moz-keyframes blink {
+  from,
+    to {
+    color: transparent; }
+  50% {
+    color: black; } }
+@-webkit-keyframes "blink" {
+  from,
+    to {
+    color: transparent; }
+  50% {
+    color: black; } }
 /*        Forms        */
 .accountform {
   padding-top: 20px; }
@@ -76,6 +104,7 @@ body {
 .down-icon {
   margin-top: 33vh;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 8vh; }
 
 /*# sourceMappingURL=style.css.map */
