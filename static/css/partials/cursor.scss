@@ -1,0 +1,42 @@
+#cursor,
+#cursor2 {
+    animation: 1s blink step-end infinite;
+}
+
+#cursor2 {
+    display: none;
+}
+
+.typing-h3 {
+  display: inline;
+}
+
+@keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-moz-keyframes blink {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
+
+@-webkit-keyframes "blink" {
+    from,
+    to {
+        color: transparent;
+    }
+    50% {
+        color: black;
+    }
+}
