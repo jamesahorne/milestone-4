@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block page_title %}Home{% endblock %}
+{% block index_active %}active{% endblock %}
 
 {% block some_js %}
 <script type="text/javascript" src="{% static 'js/typing.js' %}"></script>
@@ -23,8 +24,24 @@
 </div>
 
 
-Maybe include a button to about, all_tickets or buy_tickets?
-But these are in the nav so really you shouldn't need any additional buttons?
+<div class="row">
+    <div class="col-12">
+        <p>
+            Do you have a bug or feature request?
+        </p>
+        <a href="{% url 'buy_tickets' %}" class="btn btn-default">Bug/Feature Ticket</a>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <p>
+            Want to look at outstanding tickets or upvote a ticket?
+        </p>
+        <p></p><a href="{% url 'all_tickets' %}" class="btn btn-default">All Tickets</a>
+    </div>
+</div>
 
 
 {% endblock %}
