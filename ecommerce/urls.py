@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from home.views import index, about, data
+from home import urls as home_urls
 from accounts import urls as accounts_urls
 from products import urls as products_urls
 from django.views import static
@@ -11,9 +11,7 @@ from checkout import urls as checkout_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index, name="index"),
-    url(r'^about/$', about, name="about"),
-    url(r'^data/$', data, name="data"),
+    url(r'^', include(home_urls)),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^tickets/', include(products_urls)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
