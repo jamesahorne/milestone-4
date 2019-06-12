@@ -26,6 +26,12 @@
     color: transparent; }
   50% {
     color: black; } }
+.fixed-bottom {
+  color: white; }
+
+footer {
+  padding-top: 15px; }
+
 /*        Forms        */
 .accountform {
   padding-top: 20px; }
@@ -99,7 +105,10 @@ body {
   min-height: 40px; }
 
 .typing-height {
-  height: 50vh; }
+  height: 30vh; }
+  @media (min-width: 992px) {
+    .typing-height {
+      text-align: center; } }
 
 .down-icon {
   margin-top: 33vh;
