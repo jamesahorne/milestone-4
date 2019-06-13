@@ -1,13 +1,44 @@
 {% extends 'base.html' %}
+{% load static from staticfiles %}
 {% block page_title %}Data{% endblock %}
 {% block page_header %}Data{% endblock %}
+{% block data_active %}active{% endblock %}
+
+{% block some_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script type="text/javascript" src="{% static 'js/data.js' %}"></script>
+{% endblock %}
 
 {% block content %}
 
 
-Here put the graphs/data page, or at least in the home app
+<!--
 
-About Subify page too
+What does .input-field do? Get rid of it if it does nothing.
+
+-->
+
+
+<div class="row">
+    <div class="input-field col s12 m6 offset-l1 l4">
+        <h6 class="data-heading">Status</h6>
+        <canvas id="status"></canvas>
+    </div>
+    
+    
+    <div class="input-field col s12 m6 offset-l2 l4">
+        <h6 class="data-heading">Type</h6>
+        <canvas id="type" width="400" height="400"></canvas>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="input-field col s12 m6 offset-l1 l4">
+        <h6 class="data-heading">Urgent</h6>
+        <canvas id="urgent" width="400" height="400"></canvas>
+    </div>
+</div>
 
 
 {% endblock %}
