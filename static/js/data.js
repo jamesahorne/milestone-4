@@ -11,7 +11,29 @@ $.ajax({
     },
 });
 
-var options = {scales: {yAxes: [{ticks: {beginAtZero: true}}]}};
+var options = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            },
+            gridLines: {
+                display: false
+            }
+        }],
+        xAxes: [{
+            ticks: {
+                beginAtZero: true
+            },
+            gridLines: {
+                display: false
+            }
+        }]
+    },
+    legend: {
+        display: false
+    }
+};
 
 
 // Make bar colors all white? Then make var backgroundColor and var borderColor
@@ -33,7 +55,7 @@ function charts(tickets) {
         data: {
             labels: ['Todo', 'Doing', 'Done'],
             datasets: [{
-                label: 'Type',
+                label: 'Status',
                 data: [todo_count, doing_count, done_count],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -61,7 +83,7 @@ function charts(tickets) {
     var feature_count = ticket_types.length - bug_count;
     var ctx1 = $('#type');
     var myChart = new Chart(ctx1, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
             labels: ['Bug', 'Feature'],
             datasets: [{
