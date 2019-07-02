@@ -16,8 +16,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    os.environ.get('C9_HOSTNAME'),
-    'django-milestone.herokuapp.com'
+    'django-milestone.herokuapp.com',
+    '9c188c5f89e54468bafff135274c6340.vfs.cloud9.us-east-1.amazonaws.com'
 ]
 
 
