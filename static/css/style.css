@@ -1,3 +1,6 @@
+/*        Variables        */
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap");
+/*        Button        */
 #cursor,
 #cursor2 {
   animation: 1s blink step-end infinite; }
@@ -26,11 +29,10 @@
     color: transparent; }
   50% {
     color: black; } }
-.fixed-bottom {
-  color: white; }
-
+/*        Footer        */
 footer {
-  padding-top: 15px; }
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; }
 
 /*        Forms        */
 .accountform {
@@ -55,9 +57,6 @@ footer {
   
   */ }
 
-.show > .nav-link {
-  color: rgba(255, 255, 255, 0.75); }
-
 .dropdown-menu {
   background-color: inherit;
   border: inherit;
@@ -65,20 +64,47 @@ footer {
   margin: 0; }
 
 .dropdown-item {
-  color: rgba(255, 255, 255, 0.5); }
+  color: #fff; }
 
 .fas, .far {
   width: 1.3rem; }
+  @media (min-width: 992px) {
+    .fas, .far {
+      display: none; } }
 
-@media screen and (min-width: 992px) {
-  .fas, .far {
-    display: none; } }
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff; }
+
+.navbar-dark .navbar-toggler {
+  color: #fff;
+  border-color: #fff; }
+
+.bg-primary {
+  background-color: transparent !important; }
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+
 /*        Pages        */
 body {
-  box-sizing: border-box; }
+  background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  color: #fff;
+  font-family: "Work Sans", sans-serif; }
 
 .container {
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  min-height: 100vh; }
+
+.div-background {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 5px 20px;
+  border-radius: 10px; }
+
+h3 {
+  font-weight: 600; }
+
+a {
+  font-color: #fff; }
 
 .product {
   background-size: contain;
@@ -108,7 +134,9 @@ body {
   min-height: 40px; }
 
 .typing-height {
-  height: 30vh; }
+  height: 30vh;
+  font-weight: 600;
+  font-size: 3rem; }
   @media (min-width: 992px) {
     .typing-height {
       text-align: center; } }
