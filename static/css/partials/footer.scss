@@ -1,7 +1,10 @@
-.fixed-bottom {
-    color: white;
-}
+/*        Footer        */
 
 footer {
-    padding-top: 15px;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    
+    p {
+        margin-bottom: 0;
+    }
 }
