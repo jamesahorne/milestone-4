@@ -3,6 +3,7 @@ $(document).ready(function() {
     setTimeout(typing2, 4000);
     setTimeout(cursor, 2000);
     setTimeout(cursor2, 1900);
+    setTimeout(cursor3, 12000);
 });
 
 
@@ -36,5 +37,10 @@ function cursor() {
 
 
 function cursor2() {
-    document.getElementById('cursor2').style.display = 'inline';
+    $('#cursor2').css('display', 'inline');
+}
+
+
+function cursor3() {
+    $('#cursor2').hide()
 }
