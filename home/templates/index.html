@@ -13,12 +13,12 @@
 <div class="typing-height">
     <div class="row">
         <div class="col-12">
-            <h3 class="typing-h3" id="typing"></h3><h3 class="typing-h3" id="cursor">|</h3>
+            <h2 class="typing-h2" id="typing"></h2><h2 class="typing-h2" id="cursor">|</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <h3 class="typing-h3" id="typing2"></h3><h3 id="cursor2">|</h3>
+            <h2 class="typing-h2" id="typing2"></h2><h2 id="cursor2">|</h2>
         </div>
     </div>
 </div>
@@ -26,20 +26,9 @@
 
 <div class="row">
     <div class="col-12">
-        <p>
-            Do you have a bug or feature request?
-        </p>
-        <a href="{% url 'buy_tickets' %}" class="btn btn-default">Bug/Feature Ticket</a>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-12">
-        <p>
-            Want to look at outstanding tickets or upvote a ticket?
-        </p>
-        <p></p><a href="{% url 'all_tickets' %}" class="btn btn-default">All Tickets</a>
+        <div class="black-background flex">
+            <button class="call-to-action"><a href="{% url 'buy_tickets' %}" class="btn btn-default big">Buy A Ticket!</a></button>
+        </div>
     </div>
 </div>
 
