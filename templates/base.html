@@ -35,14 +35,18 @@
                         </div>
                     </li>
                     <li class="nav-item"><a class="nav-link {% block data_active %}{% endblock %}" href="{% url 'data' %}"><i class="far fa-chart-bar"></i> Data</a></li>
-
-                    {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link {% block profile_active %}{% endblock %}" href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
-                    {% else %}
-                    <li class="nav-item"><a class="nav-link {% block login_active %}{% endblock %}" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
-                    <li class="nav-item"><a class="nav-link {% block registration_active %}{% endblock %}" href="{% url 'registration' %}"><i class="fas fa-user-plus"></i> Register</a></li>
-                    {% endif %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i> Account</a>
+                        <div class="dropdown-menu">
+                            {% if user.is_authenticated %}
+                            <a class="dropdown-item {% block profile_active %}{% endblock %}" href="{% url 'profile' %}"> Profile</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}"> Log Out</a>
+                            {% else %}
+                            <a class="dropdown-item {% block login_active %}{% endblock %}" href="{% url 'login' %}"> Log In</a>
+                            <a class="dropdown-item {% block registration_active %}{% endblock %}" href="{% url 'registration' %}"> Register</a>
+                            {% endif %}
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {% block cart_active %}{% endblock %}" href="{% url 'view_cart' %}">
                             <i class="fas fa-shopping-cart"></i> Cart
@@ -74,9 +78,11 @@
         {% endif %}
 
 
-        <h1>
+        
+        <h1><span class="black-background">
             {% block page_header %}{% endblock %}
-        </h1>
+        </span></h1>
+        
 
 
         {% block content %}{% endblock %}
