@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block page_title %}Registration{% endblock %}
-{% block page_header %}Registration{% endblock %}
+{% block page_header %}<h1><span class="black-background">Registration</span></h1>{% endblock %}
 {% block registration_active %}active{% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ registration_form | as_bootstrap }}
-    <button type="submit" class="btn btn-default">Register</button>
+    <button type="submit" class="btn">Register</button>
 </form>
 
 {% endblock %}

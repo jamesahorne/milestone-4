@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block page_title %}Cart{% endblock %}
-{% block page_header %}Cart{% endblock %}
+{% block page_header %}<h1><span class="black-background">Cart</span></h1>{% endblock %}
 {% block cart_active %}active{% endblock %}
 
 {% block content %}
@@ -33,7 +33,7 @@
                                 <div class="input-group-addon">{{ item.quantity }}</div>
                             </div>
                         </div-->
-                        <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>  Amend</button>
+                        <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>  Delete - change icon too?</button>
                     </form>
                 </p>
             </div>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block page_title %}Log In{% endblock %}
-{% block page_header %}Log In{% endblock %}
+{% block page_header %}<h1><span class="black-background">Log In</span></h1>{% endblock %}
 {% block login_active %}active{% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
     <button type="submit">Log In</button>
 </form>
 
-<p><a class="btn btn-default" href="{% url 'password_reset' %}">Reset Password</a></p>
+<p><a class="btn" href="{% url 'password_reset' %}">Reset Password</a></p>
 
 
 {% endblock %}
