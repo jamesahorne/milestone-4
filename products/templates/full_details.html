@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
 {% block page_title %}Ticket Detail{% endblock %}
-{% block page_header %}{{ ticket.issue_name }}{% endblock %}
+{% block page_header %}<h1><span class="black-background">{{ ticket.issue_name }}</span></h1>{% endblock %}
 
 {% block content %}
 
 
 <div class="row row-flex">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-        <p>Type: {{ ticket.type }}</p>
-        <p>Upvotes: {{ ticket.upvotes }} (Do a fancy upvote button with <i class="far fa-thumbs-up"></i> etc)</p>
-        <p class="product-description">{{ ticket.description }}</p>
-        <p>Status: {{ ticket.status }}</p>
-        <p>Urgent: {{ ticket.urgent|yesno:"Yes,No" }}</p>
-        <p>Published: {{ ticket.published_date }}</p>
-        <p>Views: {{ ticket.views }}</p>
+    <div class="col-12 offset-md-1 col-md-10">
+        <div class="black-background">
+            <p>Type: {{ ticket.type }}</p>
+            <p class="ticket-description">Upvotes: {{ ticket.upvotes }} (Do a fancy upvote button with <i class="far fa-thumbs-up"></i> etc)</p>
+            <p>Description: {{ ticket.description }}</p>
+            <p class="ticket-description">Status: {{ ticket.status }}</p>
+            <p>Urgent: {{ ticket.urgent|yesno:"Yes,No" }}</p>
+            <p class="ticket-description">Published: {{ ticket.published_date }}</p>
+            <p>Views: {{ ticket.views }}</p>
+        </div>
     </div>
 </div>
 

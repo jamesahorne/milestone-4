@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block page_title %}Data{% endblock %}
-{% block page_header %}Data{% endblock %}
+{% block page_header %}<h1><span class="black-background">Data</span></h1>{% endblock %}
 {% block data_active %}active{% endblock %}
 
 {% block some_js %}
@@ -20,23 +20,29 @@ What does .input-field do? Get rid of it if it does nothing.
 
 
 <div class="row">
-    <div class="input-field col s12 m6 offset-l1 l4">
-        <h6 class="data-heading">Status</h6>
-        <canvas id="status" width="400" height="400"></canvas>
+    <div class="input-field col-12 col-md-6 offset-lg-1 col-lg-5">
+        <div class="black-background">
+            <h6 class="data-heading">Status</h6>
+            <canvas class="graphs" id="status" width="400" height="400"></canvas>
+        </div>
     </div>
     
     
-    <div class="input-field col s12 m6 offset-l2 l4">
-        <h6 class="data-heading">Type</h6>
-        <canvas id="type" width="400" height="400"></canvas>
+    <div class="input-field col-12 col-md-6 col-lg-5">
+        <div class="black-background">
+            <h6 class="data-heading">Type</h6>
+            <canvas class="graphs" id="type" width="400" height="400"></canvas>
+        </div>
     </div>
 </div>
 
 
 <div class="row">
-    <div class="input-field col s12 m6 offset-l1 l4">
-        <h6 class="data-heading">Urgent</h6>
-        <canvas id="urgent" width="400" height="400"></canvas>
+    <div class="input-field col-12 col-md-6 offset-lg-1 col-lg-5">
+        <div class="black-background">
+            <h6 class="data-heading">Urgency</h6>
+            <canvas class="graphs" id="urgent" width="400" height="400"></canvas>
+        </div>
     </div>
 </div>
 
