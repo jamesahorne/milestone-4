@@ -32,7 +32,7 @@ function typing2() {
 
 
 function cursor() {
-    $('#cursor').hide()
+    $('#cursor').hide();
 }
 
 
@@ -42,5 +42,5 @@ function cursor2() {
 
 
 function cursor3() {
-    $('#cursor2').hide()
+    $('#cursor2').hide();
 }
