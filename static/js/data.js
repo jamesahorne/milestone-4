@@ -35,6 +35,16 @@ var options = {
     }
 };
 
+var backgroundColorWhite = [
+    'rgba(255, 255, 255, 0.2)',
+    'rgba(255, 255, 255, 0.2)'
+];
+
+var borderColorWhite = [
+    'rgba(255, 255, 255, 1)',
+    'rgba(255, 255, 255, 1)'
+]
+
 
 // Make bar colors all white? Then make var backgroundColor and var borderColor
 
@@ -58,14 +68,14 @@ function charts(tickets) {
                 label: 'Status',
                 data: [todo_count, doing_count, done_count],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'
+                    'rgba(255, 255, 255, 0.2)',
+                    'rgba(255, 255, 255, 0.2)',
+                    'rgba(255, 255, 255, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -89,14 +99,8 @@ function charts(tickets) {
             datasets: [{
                 label: 'Type',
                 data: [bug_count, feature_count],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                ],
+                backgroundColor: backgroundColorWhite,
+                borderColor: borderColorWhite,
                 borderWidth: 1
             }]
         },
@@ -117,14 +121,8 @@ function charts(tickets) {
             datasets: [{
                 label: 'Urgency',
                 data: [is_urgent_count, not_urgent_count],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                ],
+                backgroundColor: backgroundColorWhite,
+                borderColor: borderColorWhite,
                 borderWidth: 1
             }]
         },
