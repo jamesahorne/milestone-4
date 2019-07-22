@@ -6,11 +6,13 @@
 {% block content %}
 
 
-<form method="POST">
-    {% csrf_token %}
-    {{ ticket_form | as_bootstrap }}
-    <button type="submit">Submit</button>
-</form>
+<div class="black-background">
+    <form method="POST">
+        {% csrf_token %}
+        {{ ticket_form | as_bootstrap }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
 
 {% endblock %}
