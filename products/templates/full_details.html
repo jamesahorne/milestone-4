@@ -9,16 +9,23 @@
 <div class="row row-flex">
     <div class="col-12 offset-md-1 col-md-10">
         <div class="black-background">
-            <p>Type: {{ ticket.type }}</p>
-            <p class="ticket-description">Upvotes: {{ ticket.upvotes }} (Do a fancy upvote button with <i class="far fa-thumbs-up"></i> etc)</p>
-            <p>Description: {{ ticket.description }}</p>
-            <p class="ticket-description">Status: {{ ticket.status }}</p>
-            <p>Urgent: {{ ticket.urgent|yesno:"Yes,No" }}</p>
-            <p class="ticket-description">Published: {{ ticket.published_date }}</p>
-            <p>Views: {{ ticket.views }}</p>
+            <p><strong>Type:</strong> {{ ticket.type }}</p>
+            <p><strong>Upvotes:</strong> {{ ticket.upvotes }}</p>
+            <p><strong>Description:</strong> {{ ticket.description }}</p>
+            <p><strong>Status:</strong> {{ ticket.status }}</p>
+            <p><strong>Urgent:</strong> {{ ticket.urgent|yesno:"Yes,No" }}</p>
+            <p><strong>Published:</strong> {{ ticket.published_date }}</p>
+            <p><strong>Views:</strong> {{ ticket.views }}</p>
         </div>
     </div>
 </div>
+{% if ticket.type == "Bug" %}
+<div class="row">
+    <div class="col-12">
+        <button class="black-background float-right"><a href="{% url 'add_upvote' ticket.id %}" class="btn">Upvote</a></button>
+    </div>
+</div>
+{% endif %}
 
 
 {% endblock %}
