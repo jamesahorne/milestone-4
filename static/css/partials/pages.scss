@@ -13,7 +13,13 @@ body {
 }
 
 .container {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+
+    @media (min-width: 768px) {
+        margin-top: 25px;
+    }
+    
 }
 
 .black-background {
@@ -45,6 +51,11 @@ nav a {
     width: 150px;
     height: 150px;
     margin: 0 auto;
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
 }
 
 .caption p {
@@ -57,18 +68,12 @@ nav a {
     margin-top: 30px;
 }
 
-.panel-default {
-    border-color: transparent;
-    padding: 0 10px;
+.black-background > p {
+    margin-bottom: 0;
 }
 
-.panel-body {
-    height: 100%;
-    border: 1px solid #ddd;
-}
-
-.product-description {
-    min-height: 40px;
+.black-background > p:last-of-type {
+    margin-bottom: 0.5rem !important;
 }
 
 .typing-height {
@@ -76,12 +81,7 @@ nav a {
     font-weight: 600;
     font-size: 3rem;
     line-height: 1;
-
-    button {
-        @media (min-width: 992px) {
-            text-align: center;
-        }
-    }
+    margin-top: -10px;
 
     h2 {
         line-height: 60px;
@@ -103,12 +103,19 @@ nav a {
     }
 }
 
-.eighty {
-    @media (min-width: 768px) {
-        width: 80%;
-        margin: auto;
-    }
+.graphs {
+    margin-bottom: 10px;
 }
+
+.data-heading {
+    margin-top: 10px;
+}
+
+
+
+
+
+
 
 // .down-icon {
 //     margin-top: 33vh;
