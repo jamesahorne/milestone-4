@@ -23,6 +23,7 @@ def bug(request):
         if ticket_form.is_valid():
             ticket_form.save()
             messages.success(request, "Your ticket was saved successfully.")
+            return redirect(reverse('all_tickets'))
         else:
             messages.error(request, "There was an error, your ticket was not saved successfully.")
     else:
@@ -37,6 +38,7 @@ def feature(request):
         if ticket_form.is_valid():
             ticket_form.save()
             messages.success(request, "Your ticket was saved successfully.")
+            return redirect(reverse('all_tickets'))
         else:
             messages.error(request, "There was an error, your ticket was not saved successfully.")
     else:
@@ -66,4 +68,4 @@ def add_upvote(request, pk):
     ticket = get_object_or_404(Ticket, pk=pk)
     ticket.upvotes +=1
     ticket.save()
-    return redirect(reverse('full_detail', pk))
+    return redirect(reverse('full_detail', args=[pk]))
