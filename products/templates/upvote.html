@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load bootstrap_tags %}
 {% block page_title %}Upvote{% endblock %}
 {% block page_header %}<h1><span class="black-background">Upvote</span></h1>{% endblock %}
 
@@ -8,22 +7,11 @@
 
 <div class="row row-flex">
     {% for ticket in tickets %}
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-        <div class="panel-body">
-            <div class="col-10">
-                <h3>{{ ticket.issue_name }}</h3>
-            </div>
-            <div class="col-2">
-                <form method="POST" action="{% url 'add_upvote' ticket.id %}">
-                    {% csrf_token %}
-                    <div class="input-class">
-                        <span class="input-group-btn">
-                            <button class="btn btn-info" type="submit">Upvote</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-            <p class="product-description">{{ ticket.description | truncatechars:70 }}</p>
+    <div class="col-12 offset-md-1 col-md-10">
+        <div class="black-background">
+            <h4>{{ ticket.issue_name }}</h4>
+            <p>{{ ticket.description }}</p>
+            <button><a href="{% url 'add_upvote' ticket.id %}" class="btn">Upvote</a></button>
         </div>
     </div>
     {% endfor %}

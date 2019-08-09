@@ -6,13 +6,21 @@
 {% block content %}
 
 
-<div class="black-background">
-    <form method="POST">
-        {% csrf_token %}
-        {{ ticket_form | as_bootstrap }}
-        <button type="submit">Submit</button>
-    </form>
-</div>
+<form method="POST">
+    <div class="row">
+        <div class="col-12 offset-md-1 col-md-10">
+            <div class="black-background">
+                <div class="form-group">
+                    {{ ticket_form | as_bootstrap }}
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            {% csrf_token %}
+            <button type="submit" class="black-background float-right">Submit</button>
+        </div>
+    </div>
+</form>
 
 
 {% endblock %}

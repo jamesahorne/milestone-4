@@ -8,12 +8,27 @@
 
 
 <form method="POST">
-    {% csrf_token %}
-    {{ login_form | as_bootstrap }}
-    <button type="submit">Log In</button>
+    <div class="row">
+        <div class="col-12 offset-md-1 col-md-10">
+            <div class="black-background">
+                <div class="form-group">
+                    {{ login_form | as_bootstrap }}
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            {% csrf_token %}
+            <button type="submit" class="black-background float-right">Log In</button>
+        </div>
+    </div>
 </form>
-
-<p><a class="btn" href="{% url 'password_reset' %}">Reset Password</a></p>
+<div class="row">
+    <div class="col-12 offset-md-1 col-md-10">
+        <p class="black-background">
+            I would like to <a href="{% url 'password_reset' %}">reset my password</a>.
+        </p>
+    </div>
+</div>
 
 
 {% endblock %}

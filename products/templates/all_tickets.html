@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load bootstrap_tags %}
 {% block page_title %}All Tickets{% endblock %}
 {% block page_header %}<h1><span class="black-background">All Tickets</span></h1>{% endblock %}
 {% block all_tickets_active %}active{% endblock %}
@@ -11,9 +10,9 @@
     {% for ticket in tickets %}
     <div class="col-12 offset-md-1 col-md-10">
         <div class="black-background">
-            <h3>{{ ticket.issue_name }}</h3>
+            <h4>{{ ticket.issue_name }}</h4>
             <p>{{ ticket.type }}</p>
-            <p class="ticket-description">{{ ticket.description | truncatechars:70 }}</p>
+            <p>{{ ticket.description | truncatechars:70 }}</p>
             <button><a href="{% url 'full_detail' ticket.id %}" class="btn">See more</a></button>
         </div>
     </div>

@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load bootstrap_tags %}
 {% block page_title %}Buy Tickets{% endblock %}
 {% block page_header %}<h1><span class="black-background">Buy Tickets</span></h1>{% endblock %}
 {% block buy_tickets_active %}active{% endblock %}
@@ -9,29 +8,37 @@
 
 <div class="row row-flex">
     {% for product in products %}
-    <div class="col-12 col-md-offset-0 col-md-4">
+    <div class="col-12  offset-md-1 col-md-10">
         <div class="black-background">
-            <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-            <h4>{{ product.name }}</h4>
-            <p>{{ product.description }}
-            {% if product.name == "Bug" %}
-            </p>
-            {% else %}
-            *</p>
-            {% endif %}
-            {% if product.price > 0 %}
-            <p>£{{ product.price }}</p>
-            {% else %}
-            <p>FREE</p>
-            {% endif %}
-            {% if product.name == "Bug" %}
-            <button><a class="btn" href="{% url 'bug' %}">Add</a></button>
-            {% else %}
-            <button><a class="btn" href="{% url 'add_to_cart' product.id %}">Add</a></button>
-            {% endif %}
+            <div class="row">
+                <div class="col-12 order-md-2 col-md-4 col-lg-5">
+                    <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
+                </div>
+                <div class="col-12 order-md-1 col-md-8 col-lg-7">
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}
+                    {% if product.name == "Bug" %}
+                    </p>
+                    {% else %}
+                    *</p>
+                    {% endif %}
+                    {% if product.price > 0 %}
+                    <p>£{{ product.price }}</p>
+                    {% else %}
+                    <p>FREE</p>
+                    {% endif %}
+                    {% if product.name == "Bug" %}
+                    <button><a class="btn" href="{% url 'bug' %}">Add</a></button>
+                    {% else %}
+                    <button><a class="btn" href="{% url 'add_to_cart' product.id %}">Add</a></button>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}
+</div>
+<div class="row">
     <div class="col-12 offset-md-1 col-md-10">
         <div class="black-background">
             <p><strong>*</strong> A feature needs enough paid upvotes to be implemented.</p>

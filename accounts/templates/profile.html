@@ -1,13 +1,33 @@
 {% extends 'base.html' %}
 {% block page_title %}{{ user }}'s Profile{% endblock %}
-{% block page_header %}<h1><span class="black-background">Welcome</span></h1>{% endblock %}
+{% block page_header %}<h1><span class="black-background">Profile</span></h1>{% endblock %}
 {% block profile_active %}active{% endblock %}
 
 {% block content %}
 
-<p>Hi {{ user }}!</p>
-<p>Your account details:<br>Email address: {{ profile.email }}</p>
-<p>Would you like to <a href="{% url 'password_reset' %}">reset your password</a>?</p>
+
+<div class="row">
+    <div class="col-12 offset-md-1 col-md-10">
+        <div class="black-background">
+            <p>Hi {{ user }}!</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 offset-md-1 col-md-10">
+        <div class="black-background">
+            <p>Your account details:</p>
+            <p>Email address: {{ profile.email }}</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 offset-md-1 col-md-10">
+        <div class="black-background">
+            <p>Would you like to <a href="{% url 'password_reset' %}">reset your password</a>?</p>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
