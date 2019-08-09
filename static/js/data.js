@@ -15,18 +15,22 @@ var options = {
     scales: {
         yAxes: [{
             ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontColor: 'white'
             },
             gridLines: {
-                display: false
+                display: false,
+                color: 'white'
             }
         }],
         xAxes: [{
             ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontColor: 'white'
             },
             gridLines: {
-                display: false
+                display: false,
+                color: 'white'
             }
         }]
     },
@@ -43,13 +47,7 @@ var backgroundColorWhite = [
 var borderColorWhite = [
     'rgba(255, 255, 255, 1)',
     'rgba(255, 255, 255, 1)'
-]
-
-
-// Make bar colors all white? Then make var backgroundColor and var borderColor
-
-// Should each chart be in a separate function and not all in charts()?
-
+];
 
 function charts(tickets) {
     var ticket_statuses = [];
