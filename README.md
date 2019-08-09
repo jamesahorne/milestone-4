@@ -4,6 +4,10 @@ To fix bugs and add features to my growing sandwich filling website
 [![This project uses Travis CI](https://travis-ci.org/jamesahorne/milestone-4.svg?branch=master)](https://travis-ci.org/jamesahorne/milestone-4)
 
 
+CHANGES MADE
+About page - I decided to indent all headers except for h1s. In the mock up, no headers are indented
+In the bug and feature forms, I removed the option for setting the status of a ticket, with the default set to ToDo, so that only an admin can change the ticket status.
+
 ## Technologies Used
 Django Rest Framework - for rendering the chart.js data (?? is that right?)
 Chart.js - for the data visualisation
@@ -13,8 +17,6 @@ For the first release of this website I kept users having to go to checkout and 
 
 
 ## Credits
-Got help from CI tutor for this line in settings.py
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 Ticket image from [here](https://www.vcw-wrestling.com/site/).
 
 ## Deployment
