@@ -19,13 +19,12 @@ class Ticket(models.Model):
 
     type = models.CharField(max_length=7, choices=TYPE_CHOICES,
                                       default='Bug')
-    issue_name = models.CharField(max_length=30, default='')
+    issue_name = models.CharField(max_length=50, default='')
     description = models.TextField()
     status = models.CharField(max_length=5, choices=STATUS_CHOICES,
                               default="ToDo")
     urgent = models.BooleanField()
-    published_date = models.DateTimeField(blank=True, null=True,
-                                          default=timezone.now)
+    published_date = models.DateTimeField(default=timezone.now)
     views = models.IntegerField(default=0)
     upvotes = models.IntegerField(default=0)
 
