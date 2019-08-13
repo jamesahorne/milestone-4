@@ -1,3 +1,5 @@
+// This code is copied from Code Institute tutorials
+
 $(function() {
     $("#payment-form").submit(function() {
         var form = this;
