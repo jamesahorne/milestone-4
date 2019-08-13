@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block page_title %}Edit Ticket{% endblock %}
+{% block page_header %}<h1><span class="black-background">Edit Ticket</span></h1>{% endblock %}
+
+{% block content %}
+
+
+<form method="POST">
+    <div class="row">
+        <div class="col-12 offset-md-1 col-md-10">
+            <div class="black-background">
+                <div class="form-group">
+                    {{ ticket_form | as_bootstrap }}
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            {% csrf_token %}
+            <button type="submit" class="black-background float-right">Save</button>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}
