@@ -15,6 +15,7 @@
             <p><strong>Urgent:</strong> {{ ticket.urgent|yesno:"Yes,No" }}</p>
             <p><strong>Published:</strong> {{ ticket.published_date }}</p>
             <p><strong>Views:</strong> {{ ticket.views }}</p>
+            <p><a href="{% url 'edit_ticket' ticket.id %}" class="btn">Edit</a></p>
         </div>
     </div>
 </div>
