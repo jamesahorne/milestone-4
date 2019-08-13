@@ -6,7 +6,7 @@ from .forms import TicketForm
 
 
 def all_tickets(request):
-    tickets = Ticket.objects.all()
+    tickets = Ticket.objects.all().order_by('-published_date')
     return render(request, 'all_tickets.html', {"tickets": tickets})
 
 
@@ -29,6 +29,22 @@ def bug(request):
     else:
         ticket_form = TicketForm
     return render(request, 'bug.html', {"ticket_form": ticket_form})
+
+
+@login_required
+def edit_ticket(request, pk):
+    ticket = get_object_or_404(Ticket, pk=pk)
+    if request.method == "POST":
+        ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
+        if ticket_form.is_valid():
+            ticket_form.save()
+            messages.success(request, "Your ticket was saved successfully.")
+            return redirect(full_detail, ticket.pk)
+        else:
+            messages.error(request, "There was an error, your ticket was not saved successfully.")
+    else:
+        ticket_form = TicketForm(instance=ticket)
+    return render(request, 'edit_ticket.html', {'ticket_form': ticket_form})
 
 
 @login_required
