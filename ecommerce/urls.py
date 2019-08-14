@@ -4,7 +4,7 @@ from home import urls as home_urls
 from accounts import urls as accounts_urls
 from products import urls as products_urls
 from django.views import static
-from .settings import MEDIA_ROOT
+from .settings.base import MEDIA_ROOT
 from cart import urls as cart_urls
 from search import urls as search_urls
 from checkout import urls as checkout_urls
