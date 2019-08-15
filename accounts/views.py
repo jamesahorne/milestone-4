@@ -55,6 +55,7 @@ def registration(request):
     return render(request, 'registration.html',
                   {"registration_form": registration_form})
 
+@login_required
 def profile(request):
     ''' User's profile page '''
     user = User.objects.get(email=request.user.email)
