@@ -54,7 +54,7 @@ function charts(tickets) {
     for (var i = 0; i < tickets.length; i++) {
         ticket_statuses.push(tickets[i].fields.status);
     }
-    var todo_count = ticket_statuses.filter(status => status === 'Todo').length;
+    var todo_count = ticket_statuses.filter(status => status === 'ToDo').length;
     var doing_count = ticket_statuses.filter(status => status === 'Doing').length;
     var done_count = ticket_statuses.filter(status => status === 'Done').length;
     var ctx = $('#status');
