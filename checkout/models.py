@@ -1,5 +1,6 @@
 from django.db import models
 from products.models import Product
+import datetime
 
 
 class Order(models.Model):
@@ -11,7 +12,7 @@ class Order(models.Model):
     street_address1 = models.CharField(max_length=40, blank=False)
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=30, blank=False)
-    date = models.DateField()
+    date = models.DateField(default=datetime.date.today)
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
