@@ -76,7 +76,7 @@ def feature_or_upvote(request):
 
 @login_required
 def upvote(request):
-    tickets = Ticket.objects.filter(type="Feature")
+    tickets = Ticket.objects.filter(type="Feature", status="ToDo")
     return render(request, "upvote.html", {"tickets": tickets})
 
 
