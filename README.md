@@ -60,6 +60,11 @@ I created mock ups for small, medium and large screens, which are in the [mockup
 - Password reset
     - Allows a user wanting to reset their password to do so by following the instructions sent by email and given on the reset password pages.
 
+### Features left to implement
+In the future, I would like to implement more features.
+- Only the user who posted the ticket can edit the ticket. (Currently any user who is logged in can edit any ticket.)
+- Users can buy more than one product at a given time.
+
 
 
 
@@ -69,8 +74,6 @@ I created mock ups for small, medium and large screens, which are in the [mockup
 Django Rest Framework - for rendering the chart.js data (?? is that right?)
 Chart.js - for the data visualisation
 
-### Features left to implement
-Currently any user can edit any ticket. I will change this so that only the user who posted the ticket can edit the ticket.
 
 
 ## Credits
