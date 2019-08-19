@@ -6,7 +6,8 @@ Subify Issue Tracker is a response to the growing popularity of Subify, the grow
 ## Please note
 I started the project with different project requirements and was advised by a Code Institute tutor to submit the project based on the older project requirements. For reference, the older project requirements can be found [here](https://github.com/jamesahorne/milestone_4/blob/master/project_requirements.md).
 
-## User Stories
+## UX
+### User Stories
 - As a user wanting to buy a product, on the home page I click the Buy A Ticket button which takes me to the Buy Tickets page. This can also be achieved via the Buy Tickets link in the navigation menu. I select the product I would like to buy, which takes me to the Cart page. I click through to the Checkout page, fill out the payment details and pay. I select which product I bought and do the required action.
 - As a user wanting to post a feature, after buying a product as above, I fill out the ticket form with correct details and submit.
 - As a user wanting to upvote a feature, after buying a product as above, I choose a feature to upvote and click the upvote button attached to that feature.
@@ -24,9 +25,11 @@ I started the project with different project requirements and was advised by a C
 - As a user wanting to view their profile, I click on the Profile link in the navigation menu.
 - As a user wanting to reset their password, on either the Log In page or Profile page, I click the Reset My Password link and follow the instructions.
 
-CHANGES MADE
-About page - I decided to indent all headers except for h1s. In the mock up, no headers are indented
-In the bug and feature forms, I removed the option for setting the status of a ticket, with the default set to ToDo, so that only an admin can change the ticket status.
+### Mock Ups
+I created mock ups for small, medium and large screens, which are in the [mockups directory](https://github.com/jamesahorne/milestone-4/blob/master/mockups/mockups.pdf). The changes I’ve made to the mock ups are:
+- Indent all headers except for h1s. In the mock up, no headers are indented.
+- Remove the option for setting the status of a ticket in the bug and feature forms. The default is now set to “ToDo”, so that only an admin can change the ticket status.
+- Categorise some links in the navigation menu. This is neater and uses up less space in the navigation menu.
 
 ## Technologies Used
 Django Rest Framework - for rendering the chart.js data (?? is that right?)
