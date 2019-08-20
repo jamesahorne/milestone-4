@@ -155,6 +155,8 @@ I have accompanied the above automated tests with the following manual tests.
     1. Type into the search box part of the name of a known bug or feature.
     2. I am taken to the All Tickets page and verify all tickets except the known bug or feature have been filtered out.
 
+### Browser Testing
+In addition to the above tests, I have tested this on various browsers (Chrome, Firefox, Microsoft Edge and Safari) and devices (laptop, iPad and iPhone) to make sure that the website is compatible on them. The website looks and functions the same on all browsers and devices tested.
 
 ## Credits
 Ticket image from [here](https://www.vcw-wrestling.com/site/).
