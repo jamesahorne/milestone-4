@@ -158,10 +158,16 @@ I have accompanied the above automated tests with the following manual tests.
 ### Browser Testing
 In addition to the above tests, I have tested this on various browsers (Chrome, Firefox, Microsoft Edge and Safari) and devices (laptop, iPad and iPhone) to make sure that the website is compatible on them. The website looks and functions the same on all browsers and devices tested.
 
+## Deployment
+To deploy the website, follow the instructions below.
+1.	Add requirements.txt using terminal command `sudo pip3 freeze --local > requirements.txt` and copying in the requirements from this repository’s requirements.txt file.
+2.	Add a Procfile using `echo web: python app.py > Procfile`.
+3.	Create your own environment variables (AWS\_ACCESS\_KEY\_ID, AWS\_SECRET\_ACCESS\_KEY, DATABASE\_URL, EMAIL\_ADDRESS, EMAIL\_PASSWORD, SECRET\_KEY, STRIPE\_PUBLISHABLE and STRIPE\_SECRET) and store them in the env.py file and as Heroku Config Vars. This will include making accounts for AWS, Stripe and Gmail.
+4.	Initialise the repository and connect to Heroku in the terminal by terminal command `Heroku login` and subsequent adds, commits and pushes to Heroku.
+5.	Start scaling dynos by command `heroku ps:scale web=1`
+6.	Lastly I went to the website URL and tested all links and tests recorded above to confirm there are no differences between the deployed version and the development version.
+
 ## Credits
 Ticket image from [here](https://www.vcw-wrestling.com/site/).
 Do I put chart js here too? Read requirements...
 Stripe code is from Code Institute tutorials
-
-## Deployment
-Mention about local vs prod? Ask tutor
