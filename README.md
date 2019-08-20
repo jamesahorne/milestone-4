@@ -1,6 +1,8 @@
 # Subify Issue Tracker
 This project is for Milestone 4 of Code Institutes Full Stack Development Diploma, and uses Python, Django and PostgreSQL in the backend and HTML, CSS, Bootstrap and JavaScript in the frontend.
-Subify Issue Tracker is a response to the growing popularity of Subify, the growing sandwich filling site. The developer decided a separate site was needed, dedicated to reporting and tracking bugs and a platform for users to ask for more features to be added to the main site.
+
+[Subify Issue Tracker](https://django-milestone.herokuapp.com/) is a response to the growing popularity of Subify, the growing sandwich filling site. The developer decided a separate site was needed, dedicated to reporting and tracking bugs and a platform for users to ask for more features to be added to the main site.
+
 [![This project uses Travis CI](https://travis-ci.org/jamesahorne/milestone-4.svg?branch=master)](https://travis-ci.org/jamesahorne/milestone-4)
 
 ## Please Note
@@ -8,7 +10,7 @@ I started the project with different project requirements and was advised by a C
 
 ## UX
 ### User Stories
-- As a user wanting to buy a product, on the home page I click the Buy A Ticket button which takes me to the Buy Tickets page. This can also be achieved via the Buy Tickets link in the navigation bar. I select the product I would like to buy, which takes me to the Cart page. I click through to the Checkout page, fill out the payment details and pay.
+- As a user wanting to buy a product, on the home page I click the Buy A Ticket button which takes me to the Buy Tickets page. This can also be achieved via the Buy Tickets link in the navigation bar. I select the product I would like to buy, which takes me to the Cart page. I click through to the Checkout page, fill out the payment form and pay.
 - As a user wanting to post a feature, after buying a product as above, I select Feature and fill out the ticket form with correct details and submit.
 - As a user wanting to upvote a feature, after buying a product as above, I select Upvote and choose a feature to upvote and click the upvote button attached to that feature.
 - As a user wanting to post a bug, after selecting Bug on the Buy Tickets page, I fill out the ticket form with the correct details and submit.
@@ -104,6 +106,55 @@ In the future, I would like to implement more features.
     - I have used Gunicorn to allow me to connect to Heroku.
 - [Pencil](https://pencil.evolus.vn/)
     - I have used Pencil for creating the mock-ups.
+
+## Testing
+### Automated Testing
+I have written automated tests for every view, form and model in the site. All tests pass. I am also using Travis CI (as mentioned in Technologies Used) for continuous integration testing. This also passes.
+
+The test files are found with name ‘test_...’ in the following directories: accounts, cart, checkout, home and products.
+
+To run the automated testing, type the following command into the terminal ‘python3 manage.py test.’
+
+### Manual Testing
+I have accompanied the above automated tests with the following manual tests.
+1.	Payment form
+    1. Go to Checkout page after selecting a product to buy.
+    2. Try to submit the empty form and verify that an error message about the required fields appears.
+    3. Try to submit the form with the credit card expiry date before the current month and verify that a relevant error message appears.
+    4. Try to submit the form with all inputs valid and verify that a success message appears.
+2.	Ticket form (includes editing a ticket)
+    1. Go to Bug page after selecting a product to buy.
+    2. Try to submit the empty form and verify that an error message about the required fields appears.
+    3. Try to submit the form with all inputs valid and verify that a success message appears.
+3.	Login form
+    1. Go to Log In page.
+    2. Try to submit the empty form and verify that an error message about the required fields appears.
+    3. Try to submit the form with invalid login details and verify that a relevant error message appears.
+    4. Try to submit the form with all inputs valid and verify that a success message appears.
+4.	Registration form
+    1. Go to Registration page.
+    2. Try to submit the empty form and verify that an error message about the required fields appears.
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears.
+    4. Try to submit the form with the first password not identical to the confirm password and verify that a relevant error message appears.
+    5. Try to submit the form with all inputs valid and verify that a success message appears.
+5.	Reset password procedure
+    1. Go to the password reset page.
+        1. Try to submit the empty form and verify that an error message about the required fields appears.
+        2. Try to submit the form with an invalid email address and verify that a relevant error message appears.
+        3. Try to submit the form with all inputs valid and verify that a success message appears.
+    2. This emails the address just submitted. On opening the email and clicking the link, I am taken to the next page in the password reset procedure.
+        1. Try to submit the empty form and verify that an error message about the required fields appears.
+        2. Try to submit the form with the first password not identical to the confirm password and verify that a relevant error message appears.
+        3. Try to submit the form with all inputs valid and verify that a success message appears.
+        4. Try to log in with the new password and verify that the password reset was successful.
+6.	Upvote a ticket
+    1. Go to the full details page of a bug.
+    2. Click the upvote button.
+    3. See the page refreshes and verify the upvote count has increased by one.
+7.	Search box
+    1. Type into the search box part of the name of a known bug or feature.
+    2. I am taken to the All Tickets page and verify all tickets except the known bug or feature have been filtered out.
+
 
 ## Credits
 Ticket image from [here](https://www.vcw-wrestling.com/site/).
