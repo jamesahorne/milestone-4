@@ -3,7 +3,7 @@ This project is for Milestone 4 of Code Institutes Full Stack Development Diplom
 Subify Issue Tracker is a response to the growing popularity of Subify, the growing sandwich filling site. The developer decided a separate site was needed, dedicated to reporting and tracking bugs and a platform for users to ask for more features to be added to the main site.
 [![This project uses Travis CI](https://travis-ci.org/jamesahorne/milestone-4.svg?branch=master)](https://travis-ci.org/jamesahorne/milestone-4)
 
-## Please note
+## Please Note
 I started the project with different project requirements and was advised by a Code Institute tutor to submit the project based on the older project requirements. For reference, the older project requirements can be found [here](https://github.com/jamesahorne/milestone_4/blob/master/project_requirements.md).
 
 ## UX
@@ -60,21 +60,50 @@ I created mock ups for small, medium and large screens, which are in the [mockup
 - Password reset
     - Allows a user wanting to reset their password to do so by following the instructions sent by email and given on the reset password pages.
 
-### Features left to implement
+### Features Left to Implement
 In the future, I would like to implement more features.
 - Only the user who posted the ticket can edit the ticket. (Currently any user who is logged in can edit any ticket.)
 - Users can buy more than one product at a given time.
 
-
-
-
-
-
 ## Technologies Used
-Django Rest Framework - for rendering the chart.js data (?? is that right?)
-Chart.js - for the data visualisation
-
-
+- HTML
+    - I have used HTML to structure my website.
+- CSS
+    - I have used CSS to style my website, based on SCSS templates I created.
+- [Bootstrap](https://getbootstrap.com/)
+    - I have used Bootstrap for the grid system and the pre-set classes, such as the navigation and button classes.
+- JavaScript
+    - I have used JavaScript to add interactivity to the site and for the data charts in the Data page.
+- [JQuery](https://jquery.com/)
+    - I have used JQuery because it is a Bootstrap dependency and to simplify DOM manipulation.
+- [Chart.js](https://www.chartjs.org/) and [Django Rest Framework](https://www.django-rest-framework.org/)
+    - I have used Chart.js and Django Rest Framework to create and render the data charts on the Data page.
+- [Stripe](https://stripe.com/gb)
+    - I have used Stripe to securely process payments.
+- [PostgreSQL](https://www.postgresql.org/)
+    - I have used PostgreSQL to store and retrieve the data.
+-  [Python](https://www.python.org/)
+    - I have used Python as the language for the back-end code.
+- [Django](https://www.djangoproject.com/)
+    - I have used Django as the framework to extend Python to front end with HTML templates and to test my site.
+- [AWS](https://aws.amazon.com/)
+    - I have used AWS for a range of their services, including S3 to store my images and Cloud9 as my IDE.
+- [django-forms-bootstrap](https://github.com/pinax/django-forms-bootstrap)
+    - I have used django-forms-bootstrap to style my Django forms. 
+- [django-storages](https://django-storages.readthedocs.io/en/latest/) and [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+    - I have used django-storages and boto3 to connect Django to AWS S3.
+- [dj-database-url](https://github.com/jacobian/dj-database-url)
+    - I have used dj-database-url to allow to connect to a database url.
+- [psycopg](http://initd.org/psycopg/)
+    - I have used psycopg to connect to my PostgreSQL database.
+- [Travis CI](https://travis-ci.org/)
+    - I have used Travis to test my code each push to GitHub.
+- [Heroku](https://www.heroku.com/)
+    - I have used Heroku to host my site.
+- [Gunicorn](https://gunicorn.org/)
+    - I have used Gunicorn to allow me to connect to Heroku.
+- [Pencil](https://pencil.evolus.vn/)
+    - I have used Pencil for creating the mock-ups.
 
 ## Credits
 Ticket image from [here](https://www.vcw-wrestling.com/site/).
