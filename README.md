@@ -167,7 +167,9 @@ To deploy the website, follow the instructions below.
 5.	Start scaling dynos by command `heroku ps:scale web=1`
 6.	Lastly I went to the website URL and tested all links and tests recorded above to confirm there are no differences between the deployed version and the development version.
 
+The deployed site can be found [here]((https://django-milestone.herokuapp.com/).
+
 ## Credits
-Ticket image from [here](https://www.vcw-wrestling.com/site/).
-Do I put chart js here too? Read requirements...
-Stripe code is from Code Institute tutorials
+- I received assistance from several Code Institute tutors and my mentor Jim Richmond.
+- The ticket image used for products was from [this site](https://www.vcw-wrestling.com/site/).
+
