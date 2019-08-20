@@ -3,6 +3,8 @@ This project is for Milestone 4 of Code Institutes Full Stack Development Diplom
 
 [Subify Issue Tracker](https://django-milestone.herokuapp.com/) is a response to the growing popularity of Subify, the growing sandwich filling site. The developer decided a separate site was needed, dedicated to reporting and tracking bugs and a platform for users to ask for more features to be added to the main site.
 
+This project uses Travis CI:
+
 [![This project uses Travis CI](https://travis-ci.org/jamesahorne/milestone-4.svg?branch=master)](https://travis-ci.org/jamesahorne/milestone-4)
 
 ## Please Note
@@ -167,7 +169,7 @@ To deploy the website, follow the instructions below.
 5.	Start scaling dynos by command `heroku ps:scale web=1`
 6.	Lastly I went to the website URL and tested all links and tests recorded above to confirm there are no differences between the deployed version and the development version.
 
-The deployed site can be found [here]((https://django-milestone.herokuapp.com/).
+The deployed site can be found [here](https://django-milestone.herokuapp.com/).
 
 ## Credits
 - I received assistance from several Code Institute tutors and my mentor Jim Richmond.
