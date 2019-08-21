@@ -115,7 +115,7 @@ I have written automated tests for every view, form and model in the site. All t
 
 The test files are found with name ‘test_...’ in the following directories: [accounts](https://github.com/jamesahorne/milestone-4/tree/master/accounts), [cart](https://github.com/jamesahorne/milestone-4/tree/master/cart), [checkout](https://github.com/jamesahorne/milestone-4/tree/master/checkout), [home](https://github.com/jamesahorne/milestone-4/tree/master/home) and [products](https://github.com/jamesahorne/milestone-4/tree/master/products).
 
-To run the automated testing, type the following command into the terminal ‘python3 manage.py test.’
+To run the automated testing, type the following command into the terminal `python3 manage.py test`.
 
 ### Manual Testing
 I have accompanied the above automated tests with the following manual tests.
@@ -168,6 +168,8 @@ To deploy the website, follow the instructions below.
 4.	Initialise the repository and connect to Heroku in the terminal by terminal command `Heroku login` and subsequent adds, commits and pushes to Heroku.
 5.	Start scaling dynos by command `heroku ps:scale web=1`
 6.	Lastly I went to the website URL and tested all links and tests recorded above to confirm there are no differences between the deployed version and the development version.
+
+I have split my settings up into a base.py file with a local.py file for the development version of the site and prod.py for the deployed version. The local.py file uses a random SECRET\_KEY, debug is set to `True`, has the AWS Cloud9 url in ALLOWED\_HOSTS and uses the Django default SQLite as the database. The prod.py file uses the SECRET\_KEY set inmy Heroku Config Vars, debug is set to `False`, has the Heroku url in ALLOWED\_HOSTS AND USES PostgreSQL as the database. DJANGO\_SETTINGS\_MODULE by default is set to .ecommerce.settings.local, but in my Heroku Config Vars is set to .ecommerce.settings.prod.
 
 The deployed site can be found [here](https://django-milestone.herokuapp.com/).
 
