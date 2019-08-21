@@ -1,9 +1,6 @@
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,9 +52,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
-# Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -77,9 +71,6 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth'
 ]
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
