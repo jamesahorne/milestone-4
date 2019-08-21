@@ -30,7 +30,7 @@ I started the project with different project requirements and was advised by a C
 - As a user wanting to reset their password, on either the Log In page or Profile page, I click the Reset My Password link and follow the instructions.
 
 ### Mock Ups
-I created mock ups for small, medium and large screens, which are in the [mockups directory](https://www.scribd.com/document/422657840/Mockups?secret_password=wNcVL9w1pqeRBaYulfB9). The changes I’ve made to the mock ups are:
+I created mock ups for small, medium and large screens, which can be found [here](https://www.scribd.com/document/422657840/Mockups?secret_password=wNcVL9w1pqeRBaYulfB9). The changes I’ve made to the mock ups are:
 - Indent all headers except for h1s. In the mock up, no headers are indented.
 - Remove the option for setting the status of a ticket in the bug and feature forms. The default is now set to “ToDo”, so that only an admin can change the ticket status.
 - Categorise some links in the navigation bar. This is neater and uses up less space in the navigation bar.
