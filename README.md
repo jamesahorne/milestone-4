@@ -119,27 +119,27 @@ To run the automated testing, type the following command into the terminal `pyth
 
 ### Manual Testing
 I have accompanied the above automated tests with the following manual tests.
-1.	Payment form
+1. Payment form
     1. Go to Checkout page after selecting a product to buy.
     2. Try to submit the empty form and verify that an error message about the required fields appears.
     3. Try to submit the form with the credit card expiry date before the current month and verify that a relevant error message appears.
     4. Try to submit the form with all inputs valid and verify that a success message appears.
-2.	Ticket form (includes editing a ticket)
+2. Ticket form (includes editing a ticket)
     1. Go to Bug page after selecting a product to buy.
     2. Try to submit the empty form and verify that an error message about the required fields appears.
     3. Try to submit the form with all inputs valid and verify that a success message appears.
-3.	Login form
+3. Login form
     1. Go to Log In page.
     2. Try to submit the empty form and verify that an error message about the required fields appears.
     3. Try to submit the form with invalid login details and verify that a relevant error message appears.
     4. Try to submit the form with all inputs valid and verify that a success message appears.
-4.	Registration form
+4. Registration form
     1. Go to Registration page.
     2. Try to submit the empty form and verify that an error message about the required fields appears.
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears.
     4. Try to submit the form with the first password not identical to the confirm password and verify that a relevant error message appears.
     5. Try to submit the form with all inputs valid and verify that a success message appears.
-5.	Reset password procedure
+5. Reset password procedure
     1. Go to the password reset page.
         1. Try to submit the empty form and verify that an error message about the required fields appears.
         2. Try to submit the form with an invalid email address and verify that a relevant error message appears.
@@ -149,11 +149,11 @@ I have accompanied the above automated tests with the following manual tests.
         2. Try to submit the form with the first password not identical to the confirm password and verify that a relevant error message appears.
         3. Try to submit the form with all inputs valid and verify that a success message appears.
         4. Try to log in with the new password and verify that the password reset was successful.
-6.	Upvote a ticket
+6. Upvote a ticket
     1. Go to the full details page of a bug.
     2. Click the upvote button.
     3. See the page refreshes and verify the upvote count has increased by one.
-7.	Search box
+7. Search box
     1. Type into the search box part of the name of a known bug or feature.
     2. I am taken to the All Tickets page and verify all tickets except the known bug or feature have been filtered out.
 
@@ -162,12 +162,12 @@ In addition to the above tests, I have tested this on various browsers (Chrome, 
 
 ## Deployment
 To deploy the website, follow the instructions below.
-1.	Add requirements.txt using terminal command `sudo pip3 freeze --local > requirements.txt` and copying in the requirements from this repository’s requirements.txt file.
-2.	Add a Procfile using `echo web: gunicorn ecommerce.wsgi:application > Procfile`.
-3.	Create your own environment variables (AWS\_ACCESS\_KEY\_ID, AWS\_SECRET\_ACCESS\_KEY, DATABASE\_URL, EMAIL\_ADDRESS, EMAIL\_PASSWORD, SECRET\_KEY, STRIPE\_PUBLISHABLE and STRIPE\_SECRET) and store them in the env.py file and as Heroku Config Vars. This will include making accounts for AWS, Stripe and Gmail.
-4.	Initialise the repository and connect to Heroku in the terminal by terminal command `Heroku login` and subsequent adds, commits and pushes to Heroku.
-5.	Start scaling dynos by command `heroku ps:scale web=1`
-6.	Lastly I went to the website URL and tested all links and tests recorded above to confirm there are no differences between the deployed version and the development version.
+1. Add requirements.txt using terminal command `sudo pip3 freeze --local > requirements.txt` and copying in the requirements from this repository’s requirements.txt file.
+2. Add a Procfile using `echo web: gunicorn ecommerce.wsgi:application > Procfile`.
+3. Create your own environment variables (AWS\_ACCESS\_KEY\_ID, AWS\_SECRET\_ACCESS\_KEY, DATABASE\_URL, EMAIL\_ADDRESS, EMAIL\_PASSWORD, SECRET\_KEY, STRIPE\_PUBLISHABLE and STRIPE\_SECRET) and store them in the env.py file and as Heroku Config Vars. This will include making accounts for AWS, Stripe and Gmail.
+4. Initialise the repository and connect to Heroku in the terminal by terminal command `Heroku login` and subsequent adds, commits and pushes to Heroku.
+5. Start scaling dynos by command `heroku ps:scale web=1`
+6. Lastly I went to the website URL and tested all links and tests recorded above to confirm there are no differences between the deployed version and the development version.
 
 I have split my settings up into a base.py file with a local.py file for the development version of the site and prod.py for the deployed version. The local.py file uses a random SECRET\_KEY, debug is set to `True`, has the AWS Cloud9 url in ALLOWED\_HOSTS and uses the Django default SQLite as the database. The prod.py file uses the SECRET\_KEY set inmy Heroku Config Vars, debug is set to `False`, has the Heroku url in ALLOWED\_HOSTS AND USES PostgreSQL as the database. DJANGO\_SETTINGS\_MODULE by default is set to .ecommerce.settings.local, but in my Heroku Config Vars is set to .ecommerce.settings.prod.
 
@@ -176,4 +176,3 @@ The deployed site can be found [here](https://django-milestone.herokuapp.com/).
 ## Credits
 - I received assistance from several Code Institute tutors and my mentor Jim Richmond.
 - The ticket image used for products was from [this site](https://www.vcw-wrestling.com/site/).
-
