@@ -1,3 +1,5 @@
+// Functions typing() and typing2() were used from https://www.w3schools.com/howto/howto_js_typewriter.asp
+
 $(document).ready(function() {
     setTimeout(typing, 500);
     setTimeout(typing2, 4000);

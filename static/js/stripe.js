@@ -1,4 +1,4 @@
-// This code is copied from Code Institute tutorials
+// This code is used from Code Institute tutorials
 
 $(function() {
     $("#payment-form").submit(function() {
