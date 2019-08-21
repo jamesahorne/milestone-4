@@ -8,7 +8,7 @@ This project uses Travis CI:
 [![This project uses Travis CI](https://travis-ci.org/jamesahorne/milestone-4.svg?branch=master)](https://travis-ci.org/jamesahorne/milestone-4)
 
 ## Please Note
-I started the project with different project requirements and was advised by a Code Institute tutor to submit the project based on the older project requirements. For reference, the older project requirements can be found [here](https://github.com/jamesahorne/milestone_4/blob/master/project_requirements.md).
+I started the project with different project requirements and was advised by a Code Institute tutor to submit the project based on the older project requirements. For reference, the older project requirements can be found [here](https://github.com/jamesahorne/milestone-4/blob/master/project_requirements.md).
 
 ## UX
 ### User Stories
@@ -30,7 +30,7 @@ I started the project with different project requirements and was advised by a C
 - As a user wanting to reset their password, on either the Log In page or Profile page, I click the Reset My Password link and follow the instructions.
 
 ### Mock Ups
-I created mock ups for small, medium and large screens, which are in the [mockups directory](https://github.com/jamesahorne/milestone-4/blob/master/mockups/mockups.pdf). The changes I’ve made to the mock ups are:
+I created mock ups for small, medium and large screens, which are in the [mockups directory](https://www.scribd.com/document/422657840/Mockups?secret_password=wNcVL9w1pqeRBaYulfB9). The changes I’ve made to the mock ups are:
 - Indent all headers except for h1s. In the mock up, no headers are indented.
 - Remove the option for setting the status of a ticket in the bug and feature forms. The default is now set to “ToDo”, so that only an admin can change the ticket status.
 - Categorise some links in the navigation bar. This is neater and uses up less space in the navigation bar.
@@ -113,7 +113,7 @@ In the future, I would like to implement more features.
 ### Automated Testing
 I have written automated tests for every view, form and model in the site. All tests pass. I am also using Travis CI (as mentioned in Technologies Used) for continuous integration testing. This also passes.
 
-The test files are found with name ‘test_...’ in the following directories: accounts, cart, checkout, home and products.
+The test files are found with name ‘test_...’ in the following directories: [accounts](https://github.com/jamesahorne/milestone-4/tree/master/accounts), [cart](https://github.com/jamesahorne/milestone-4/tree/master/cart), [checkout](https://github.com/jamesahorne/milestone-4/tree/master/checkout), [home](https://github.com/jamesahorne/milestone-4/tree/master/home) and [products](https://github.com/jamesahorne/milestone-4/tree/master/products).
 
 To run the automated testing, type the following command into the terminal ‘python3 manage.py test.’
 
