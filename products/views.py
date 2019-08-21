@@ -21,7 +21,9 @@ def bug(request):
     if request.method == "POST":
         ticket_form = TicketForm(request.POST)
         if ticket_form.is_valid():
-            ticket_form.save()
+            ticket = ticket_form.save(commit=False)
+            ticket.type = 'Bug'
+            ticket.save()
             messages.success(request, "Your ticket was saved successfully.")
             return redirect(reverse('all_tickets'))
         else:
@@ -52,7 +54,9 @@ def feature(request):
     if request.method == "POST":
         ticket_form = TicketForm(request.POST)
         if ticket_form.is_valid():
-            ticket_form.save()
+            ticket = ticket_form.save(commit=False)
+            ticket.type = 'Feature'
+            ticket.save()
             messages.success(request, "Your ticket was saved successfully.")
             return redirect(reverse('all_tickets'))
         else:

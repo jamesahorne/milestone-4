@@ -17,8 +17,7 @@ class Ticket(models.Model):
     TYPE_CHOICES = (('Bug', 'Bug'), ('Feature', 'Feature'))
     STATUS_CHOICES = (('Todo', 'ToDo'), ('Doing', 'Doing'), ('Done', 'Done'))
 
-    type = models.CharField(max_length=7, choices=TYPE_CHOICES,
-                                      default='Bug')
+    type = models.CharField(max_length=7, choices=TYPE_CHOICES)
     issue_name = models.CharField(max_length=50, default='')
     description = models.TextField()
     status = models.CharField(max_length=5, choices=STATUS_CHOICES,
