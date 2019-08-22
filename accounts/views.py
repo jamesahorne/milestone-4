@@ -7,14 +7,14 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 
 @login_required
 def logout(request):
-    ''' Logout '''
+    ''' Log user out '''
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('index'))
 
 
 def login(request):
-    ''' Login '''
+    ''' Log user in '''
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     if request.method == "POST":
@@ -35,7 +35,7 @@ def login(request):
 
 
 def registration(request):
-    ''' Registration '''
+    ''' Register user account '''
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     if request.method == "POST":
@@ -57,6 +57,6 @@ def registration(request):
 
 @login_required
 def profile(request):
-    ''' User's profile page '''
+    ''' Profile page with user's username and email address displayed '''
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})

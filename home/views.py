@@ -25,5 +25,6 @@ class DataVisualisation(APIView):
     permission_classes = []
 
     def get(self, request, format=None):
+        ''' Load ticket data for data page '''
         tickets = serializers.serialize('json', Ticket.objects.all(), fields=('type', 'status', 'urgent'))
         return Response(tickets)

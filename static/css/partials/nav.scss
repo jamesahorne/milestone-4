@@ -48,6 +48,7 @@
     border-color: #fff;
 }
 
+/* Use of !important due to overwriting a Bootstrap class using !important */
 .bg-primary {
     background-color: transparent !important;
 }

@@ -6,18 +6,21 @@ from .forms import TicketForm
 
 
 def all_tickets(request):
+    ''' Displays all tickets. Can be filtered by name with the search box '''
     tickets = Ticket.objects.all().order_by('-published_date')
     return render(request, 'all_tickets.html', {"tickets": tickets})
 
 
 @login_required
 def buy_tickets(request):
+    ''' Buy bugs, features or upvotes '''
     products = Product.objects.all()
     return render(request, 'buy_tickets.html', {"products": products})
 
 
 @login_required
 def bug(request):
+    ''' Fill out form to post a bug '''
     if request.method == "POST":
         ticket_form = TicketForm(request.POST)
         if ticket_form.is_valid():
@@ -35,6 +38,7 @@ def bug(request):
 
 @login_required
 def edit_ticket(request, pk):
+    ''' Fill out form to edit a ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
     if request.method == "POST":
         ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
@@ -51,6 +55,7 @@ def edit_ticket(request, pk):
 
 @login_required
 def feature(request):
+    ''' Fill out form to post a feature '''
     if request.method == "POST":
         ticket_form = TicketForm(request.POST)
         if ticket_form.is_valid():
@@ -67,6 +72,7 @@ def feature(request):
 
 
 def full_detail(request, pk):
+    ''' Displays full details of a specific ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
     ticket.views +=1
     ticket.save()
@@ -75,16 +81,19 @@ def full_detail(request, pk):
 
 @login_required
 def feature_or_upvote(request):
+    ''' Choose to upvote a feature or post a feature '''
     return render(request, "feature_or_upvote.html")
 
 
 @login_required
 def upvote(request):
+    ''' Upvote a feature that is still to be added '''
     tickets = Ticket.objects.filter(type="Feature", status="ToDo")
     return render(request, "upvote.html", {"tickets": tickets})
 
 
 def add_upvote(request, pk):
+    ''' Upvote a bug or feature '''
     ticket = get_object_or_404(Ticket, pk=pk)
     ticket.upvotes +=1
     ticket.save()
