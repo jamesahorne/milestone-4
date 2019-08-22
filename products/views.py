@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Product, Ticket
 from .forms import TicketForm
+from django.contrib.auth.models import User
 
 
 def all_tickets(request):
@@ -40,16 +41,20 @@ def bug(request):
 def edit_ticket(request, pk):
     ''' Fill out form to edit a ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
-    if request.method == "POST":
-        ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
-        if ticket_form.is_valid():
-            ticket_form.save()
-            messages.success(request, "Your ticket was saved successfully.")
-            return redirect(full_detail, ticket.pk)
+    if (request.user.is_authenticated and request.user == post.owner or
+            request.user.is_superuser):
+        if request.method == "POST":
+            ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
+            if ticket_form.is_valid():
+                ticket_form.save()
+                messages.success(request, "Your ticket was saved successfully.")
+                return redirect(full_detail, ticket.pk)
+            else:
+                messages.error(request, "There was an error, your ticket was not saved successfully.")
         else:
-            messages.error(request, "There was an error, your ticket was not saved successfully.")
+            ticket_form = TicketForm(instance=ticket)
     else:
-        ticket_form = TicketForm(instance=ticket)
+        return HttpResponseForbidden()
     return render(request, 'edit_ticket.html', {'ticket_form': ticket_form})
 
 

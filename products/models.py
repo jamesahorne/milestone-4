@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Product(models.Model):
     
@@ -18,6 +19,8 @@ class Ticket(models.Model):
     STATUS_CHOICES = (('Todo', 'ToDo'), ('Doing', 'Doing'), ('Done', 'Done'))
 
     type = models.CharField(max_length=7, choices=TYPE_CHOICES)
+    author = models.ForeignKey(User, related_name='tickets', null=False,
+                              default=1, on_delete=models.SET_DEFAULT)
     issue_name = models.CharField(max_length=50, default='')
     description = models.TextField()
     status = models.CharField(max_length=5, choices=STATUS_CHOICES,
