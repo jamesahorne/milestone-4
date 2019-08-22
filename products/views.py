@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Product, Ticket
 from .forms import TicketForm
 from django.contrib.auth.models import User
+from django.http import HttpResponseForbidden
 
 
 def all_tickets(request):
