@@ -9,12 +9,13 @@
     <div class="col-12 offset-md-1 col-md-10">
         <div class="black-background">
             <p><strong>Type:</strong> {{ ticket.type }}</p>
-            <p><strong>Upvotes:</strong> {{ ticket.upvotes }}</p>
+            <p><strong>Author:</strong> {{ ticket.author }}</p>
             <p><strong>Description:</strong> {{ ticket.description }}</p>
             <p><strong>Status:</strong> {{ ticket.status }}</p>
             <p><strong>Urgent:</strong> {{ ticket.urgent|yesno:"Yes,No" }}</p>
             <p><strong>Published:</strong> {{ ticket.published_date }}</p>
             <p><strong>Views:</strong> {{ ticket.views }}</p>
+            <p><strong>Upvotes:</strong> {{ ticket.upvotes }}</p>
             <p><a href="{% url 'edit_ticket' ticket.id %}" class="btn">Edit</a></p>
         </div>
     </div>
