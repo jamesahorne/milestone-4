@@ -41,7 +41,7 @@ def bug(request):
 def edit_ticket(request, pk):
     ''' Fill out form to edit a ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
-    if (request.user.is_authenticated and request.user == post.owner or
+    if (request.user.is_authenticated and request.user == ticket.author or
             request.user.is_superuser):
         if request.method == "POST":
             ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
