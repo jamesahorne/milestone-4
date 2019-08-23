@@ -1,7 +1,7 @@
 # Subify Issue Tracker
 This project is for Milestone 4 of Code Institutes Full Stack Development Diploma, and uses Python, Django and PostgreSQL in the backend and HTML, CSS, Bootstrap and JavaScript in the frontend.
 
-[Subify Issue Tracker](https://django-milestone.herokuapp.com/) is a response to the growing popularity of Subify, the growing sandwich filling site. The developer decided a separate site was needed, dedicated to reporting and tracking bugs and a platform for users to ask for more features to be added to the main site.
+[Subify Issue Tracker](https://django-milestone.herokuapp.com/) is a response to the growing popularity of Subify, the growing sandwich filling site. The developer decided another site was needed, dedicated to reporting and tracking bugs and a platform for users to ask for more features to be added to the main site.
 
 This project uses Travis CI:
 
