@@ -6,8 +6,8 @@
 {% block content %}
 
 
+{% for item in cart_items %}
 <div class="row row-flex">
-    {% for item in cart_items %}
     <div class="col-12 offset-md-1 col-md-10">
         <div class="black-background">
             <div class="row">
@@ -23,13 +23,24 @@
             </div>
         </div>
     </div>
-    {% endfor %}
 </div>
+{% endfor %}
+{% if cart_items|length == 0 %}
+<div class="row">
+    <div class="col-12">
+        <div class="black-background">
+            <p>Sorry, there are no items in your cart.</p>
+            <p>Would you like to <a href="{% url 'buy_tickets' %}" class="btn">buy tickets</a>?</p>
+        </div>
+    </div>
+</div>
+{% else %}
 <div class="row">
     <div class="col-12">
         <button class="black-background float-right"><a href="{% url 'checkout' %}" class="btn">Checkout</a></button>
     </div>
 </div>
+{% endif %}
 
 
 {% endblock %}
