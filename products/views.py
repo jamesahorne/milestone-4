@@ -28,6 +28,7 @@ def bug(request):
         if ticket_form.is_valid():
             ticket = ticket_form.save(commit=False)
             ticket.type = 'Bug'
+            ticket.author = request.user
             ticket.save()
             messages.success(request, "Your ticket was saved successfully.")
             return redirect(reverse('all_tickets'))
@@ -43,7 +44,7 @@ def edit_ticket(request, pk):
     ''' Fill out form to edit a ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
     if (request.user.is_authenticated and request.user == ticket.author or
-            request.user.is_superuser):
+        request.user.is_superuser):
         if request.method == "POST":
             ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
             if ticket_form.is_valid():
@@ -67,6 +68,7 @@ def feature(request):
         if ticket_form.is_valid():
             ticket = ticket_form.save(commit=False)
             ticket.type = 'Feature'
+            ticket.author = request.user
             ticket.save()
             messages.success(request, "Your ticket was saved successfully.")
             return redirect(reverse('all_tickets'))
@@ -81,6 +83,7 @@ def full_detail(request, pk):
     ''' Displays full details of a specific ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
     ticket.views +=1
+    current_user = request.user
     ticket.save()
     return render(request, 'full_details.html', {"ticket": ticket})
 

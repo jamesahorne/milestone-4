@@ -20,7 +20,7 @@ class Ticket(models.Model):
 
     type = models.CharField(max_length=7, choices=TYPE_CHOICES)
     author = models.ForeignKey(User, related_name='tickets', null=False,
-                              default=1, on_delete=models.SET_DEFAULT)
+                               default=1, on_delete=models.SET_DEFAULT)
     issue_name = models.CharField(max_length=50, default='')
     description = models.TextField()
     status = models.CharField(max_length=5, choices=STATUS_CHOICES,

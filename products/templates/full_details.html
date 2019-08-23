@@ -16,7 +16,9 @@
             <p><strong>Published:</strong> {{ ticket.published_date }}</p>
             <p><strong>Views:</strong> {{ ticket.views }}</p>
             <p><strong>Upvotes:</strong> {{ ticket.upvotes }}</p>
+            {% if current_user == ticket.author or current_user.is_superuser %}
             <p><a href="{% url 'edit_ticket' ticket.id %}" class="btn">Edit</a></p>
+            {% endif %}
         </div>
     </div>
 </div>
