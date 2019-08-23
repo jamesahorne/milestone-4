@@ -1,5 +1,3 @@
-"use strict";
-
 var endpoint = '/api/graphs/data/';
 
 $.ajax({
@@ -84,13 +82,13 @@ function charts(tickets) {
     });
 
     var ticket_types = [];
-    for (var i = 0; i < tickets.length; i++) {
+    for (i = 0; i < tickets.length; i++) {
         ticket_types.push(tickets[i].fields.type);
     }
     var bug_count = ticket_types.filter(type => type === 'Bug').length;
     var feature_count = ticket_types.length - bug_count;
     var ctx1 = $('#type');
-    var myChart = new Chart(ctx1, {
+    myChart = new Chart(ctx1, {
         type: 'horizontalBar',
         data: {
             labels: ['Bug', 'Feature'],
@@ -106,13 +104,13 @@ function charts(tickets) {
     });
 
     var ticket_urgencies = [];
-    for (var i = 0; i < tickets.length; i++) {
+    for (i = 0; i < tickets.length; i++) {
         ticket_urgencies.push(tickets[i].fields.urgent);
     }
     var is_urgent_count = ticket_urgencies.filter(Boolean).length;
     var not_urgent_count = ticket_urgencies.length - is_urgent_count;
     var ctx2 = $('#urgent');
-    var myChart = new Chart(ctx2, {
+    myChart = new Chart(ctx2, {
         type: 'bar',
         data: {
             labels: ['Urgent', 'Not Urgent'],
