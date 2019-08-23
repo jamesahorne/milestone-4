@@ -33,7 +33,8 @@ def bug(request):
             messages.success(request, "Your ticket was saved successfully.")
             return redirect(reverse('all_tickets'))
         else:
-            messages.error(request, "There was an error, your ticket was not saved successfully.")
+            messages.error(request,
+                           "There was an error, your ticket was not saved successfully.")
     else:
         ticket_form = TicketForm
     return render(request, 'bug.html', {"ticket_form": ticket_form})
@@ -46,13 +47,16 @@ def edit_ticket(request, pk):
     if (request.user.is_authenticated and request.user == ticket.author or
         request.user.is_superuser):
         if request.method == "POST":
-            ticket_form = TicketForm(request.POST, request.FILES, instance=ticket)
+            ticket_form = TicketForm(request.POST, request.FILES,
+                                     instance=ticket)
             if ticket_form.is_valid():
                 ticket_form.save()
-                messages.success(request, "Your ticket was saved successfully.")
+                messages.success(request,
+                                 "Your ticket was saved successfully.")
                 return redirect(full_detail, ticket.pk)
             else:
-                messages.error(request, "There was an error, your ticket was not saved successfully.")
+                messages.error(request,
+                               "There was an error, your ticket was not saved successfully.")
         else:
             ticket_form = TicketForm(instance=ticket)
     else:
@@ -73,7 +77,8 @@ def feature(request):
             messages.success(request, "Your ticket was saved successfully.")
             return redirect(reverse('all_tickets'))
         else:
-            messages.error(request, "There was an error, your ticket was not saved successfully.")
+            messages.error(request,
+                           "There was an error, your ticket was not saved successfully.")
     else:
         ticket_form = TicketForm
     return render(request, 'feature.html', {"ticket_form": ticket_form})
@@ -82,7 +87,7 @@ def feature(request):
 def full_detail(request, pk):
     ''' Displays full details of a specific ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
-    ticket.views +=1
+    ticket.views += 1
     ticket.save()
     return render(request, 'full_details.html', {"ticket": ticket})
 
@@ -103,6 +108,6 @@ def upvote(request):
 def add_upvote(request, pk):
     ''' Upvote a bug or feature '''
     ticket = get_object_or_404(Ticket, pk=pk)
-    ticket.upvotes +=1
+    ticket.upvotes += 1
     ticket.save()
     return redirect(reverse('full_detail', args=[pk]))

@@ -2,6 +2,7 @@ from django.test import TestCase
 from .models import Ticket
 from django.contrib.auth.models import User
 
+
 class TestViews(TestCase):
     def test_get_all_tickets_page(self):
         page = self.client.get('/tickets/')
@@ -34,7 +35,7 @@ class TestViews(TestCase):
             email='username@example.com',
             password='password')
         self.client.login(username='username', password='password')
-        ticket = Ticket(type='Bug', issue_name='Test Issue Name', 
+        ticket = Ticket(type='Bug', issue_name='Test Issue Name',
                         description='Test description', urgent='True')
         ticket.save()
         page = self.client.get('/tickets/edit-ticket/{0}'.format(ticket.id))
@@ -52,7 +53,7 @@ class TestViews(TestCase):
         self.assertTemplateUsed(page, "feature.html")
 
     def test_get_full_detail_page(self):
-        ticket = Ticket(type='Bug', issue_name='Test Issue Name', 
+        ticket = Ticket(type='Bug', issue_name='Test Issue Name',
                         description='Test description', urgent='True')
         ticket.save()
         page = self.client.get('/tickets/full-detail/{0}'.format(ticket.id))
@@ -60,7 +61,7 @@ class TestViews(TestCase):
         self.assertTemplateUsed(page, "full_details.html")
 
     def test_get_full_detail_404(self):
-        ticket = Ticket(type='Bug', issue_name='Test Issue Name', 
+        ticket = Ticket(type='Bug', issue_name='Test Issue Name',
                         description='Test description', urgent='True')
         ticket.save()
         page = self.client.get('/tickets/full-detail/100')

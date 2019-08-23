@@ -55,6 +55,7 @@ def registration(request):
     return render(request, 'registration.html',
                   {"registration_form": registration_form})
 
+
 @login_required
 def profile(request):
     ''' Profile page with user's username and email address displayed '''

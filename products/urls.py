@@ -1,5 +1,7 @@
 from django.conf.urls import url, include
-from .views import all_tickets, buy_tickets, bug, edit_ticket, feature, full_detail, feature_or_upvote, upvote, add_upvote
+from .views import (all_tickets, buy_tickets, bug, edit_ticket, feature,
+                    full_detail, feature_or_upvote, upvote, add_upvote)
+
 
 urlpatterns = [
     url(r'^$', all_tickets, name='all_tickets'),

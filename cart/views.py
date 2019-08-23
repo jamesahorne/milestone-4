@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 
+
 def view_cart(request):
     ''' Display contents of the cart '''
     return render(request, 'cart.html')

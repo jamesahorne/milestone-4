@@ -9,6 +9,7 @@ from cart import urls as cart_urls
 from search import urls as search_urls
 from checkout import urls as checkout_urls
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(home_urls)),

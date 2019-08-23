@@ -26,5 +26,6 @@ class DataVisualisation(APIView):
 
     def get(self, request, format=None):
         ''' Load ticket data for data page '''
-        tickets = serializers.serialize('json', Ticket.objects.all(), fields=('type', 'status', 'urgent'))
+        tickets = serializers.serialize('json', Ticket.objects.all(),
+                                        fields=('type', 'status', 'urgent'))
         return Response(tickets)
