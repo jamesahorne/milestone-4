@@ -51,9 +51,6 @@
                     <li class="nav-item">
                         <a class="nav-link {% block cart_active %}{% endblock %}" href="{% url 'view_cart' %}">
                             <i class="fas fa-shopping-cart"></i> Cart
-                            {% if product_count > 0 %}
-                            <label class="badge badge-warning">{{ cart_items.len }}</label>
-                            {% endif %}
                         </a>
                     </li
                     <li class="nav-item" class="display">

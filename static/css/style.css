@@ -186,16 +186,6 @@ input {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; }
 
 /*        Nav        */
-.badge {
-  padding-left: 9px;
-  padding-right: 9px;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px; }
-
-.badge-warning[href] {
-  background-color: #c67605; }
-
 .show > .nav-link {
   color: rgba(255, 255, 255, 0.75); }
 
