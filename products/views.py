@@ -83,7 +83,6 @@ def full_detail(request, pk):
     ''' Displays full details of a specific ticket '''
     ticket = get_object_or_404(Ticket, pk=pk)
     ticket.views +=1
-    current_user = request.user
     ticket.save()
     return render(request, 'full_details.html', {"ticket": ticket})
 
