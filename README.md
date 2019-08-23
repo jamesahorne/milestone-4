@@ -66,7 +66,6 @@ I created mock ups for small, medium and large screens, which can be found [here
 
 ### Features Left to Implement
 In the future, I would like to implement more features.
-- Only the user who posted the ticket can edit the ticket. (Currently any user who is logged in can edit any ticket.)
 - Users can buy more than one product at a given time. (Currently a user can only buy one product at a time.)
 
 ## Technologies Used
