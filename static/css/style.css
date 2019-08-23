@@ -61,9 +61,6 @@ nav a {
 .black-background > p {
   margin-bottom: 0; }
 
-.black-background > p:last-of-type {
-  margin-bottom: 0.5rem; }
-
 .typing-height {
   min-height: 45vh;
   font-weight: 600;
@@ -107,7 +104,8 @@ button {
   .typing-height button {
     text-align: center; } }
 
-button.black-background {
+button.black-background,
+a.black-background {
   padding-left: 25px;
   padding-right: 25px; }
 
@@ -121,10 +119,12 @@ button.black-background {
 
 .big {
   font-size: 1.5rem;
-  font-weight: 600; }
+  font-weight: 600;
+  align-self: center; }
 
 .call-to-action {
-  height: 15vh; }
+  height: 15vh;
+  display: flex; }
 
 /*        Cursor        */
 #cursor,
@@ -137,19 +137,7 @@ button.black-background {
 .typing-h2 {
   display: inline; }
 
-@keyframes "blink" {
-  from,
-    to {
-    color: transparent; }
-  50% {
-    color: #fff; } }
-@-moz-keyframes blink {
-  from,
-    to {
-    color: transparent; }
-  50% {
-    color: #fff; } }
-@-webkit-keyframes "blink" {
+@keyframes blink {
   from,
     to {
     color: transparent; }

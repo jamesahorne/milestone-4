@@ -13,27 +13,7 @@
   display: inline;
 }
 
-@keyframes "blink" {
-    from,
-    to {
-        color: transparent;
-    }
-    50% {
-        color: #fff;
-    }
-}
-
-@-moz-keyframes blink {
-    from,
-    to {
-        color: transparent;
-    }
-    50% {
-        color: #fff;
-    }
-}
-
-@-webkit-keyframes "blink" {
+@keyframes blink {
     from,
     to {
         color: transparent;

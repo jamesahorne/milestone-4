@@ -19,7 +19,8 @@ button {
     }
 }
 
-button.black-background {
+button.black-background,
+a.black-background {
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -38,8 +39,10 @@ button.black-background {
 .big {
     font-size: 1.5rem;
     font-weight: 600;
+    align-self: center;
 }
 
 .call-to-action {
     height: 15vh;
+    display: flex;
 }
