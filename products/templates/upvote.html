@@ -11,7 +11,7 @@
         <div class="black-background">
             <h4>{{ ticket.issue_name }}</h4>
             <p>{{ ticket.description }}</p>
-            <button><a href="{% url 'add_upvote' ticket.id %}" class="btn">Upvote</a></button>
+            <a href="{% url 'add_upvote' ticket.id %}" class="btn">Upvote</a>
         </div>
     </div>
     {% endfor %}

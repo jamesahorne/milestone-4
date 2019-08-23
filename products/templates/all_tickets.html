@@ -13,7 +13,7 @@
             <h4>{{ ticket.issue_name }}</h4>
             <p>{{ ticket.type }}</p>
             <p>{{ ticket.description | truncatechars:70 }}</p>
-            <button><a href="{% url 'full_detail' ticket.id %}" class="btn">See more</a></button>
+            <a href="{% url 'full_detail' ticket.id %}" class="btn">See more</a>
         </div>
     </div>
     {% endfor %}

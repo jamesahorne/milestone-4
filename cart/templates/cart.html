@@ -18,7 +18,7 @@
                     <h4>{{ item.product.name }}</h4>
                     <p>{{ item.product.description }}</p>
                     <p>£{{ item.product.price }}</p>
-                    <button><a href="{% url 'delete_cart' item.id %}" class="btn">Delete</a></button>
+                    <a href="{% url 'delete_cart' item.id %}" class="btn">Delete</a>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
 {% else %}
 <div class="row">
     <div class="col-12">
-        <button class="black-background float-right"><a href="{% url 'checkout' %}" class="btn">Checkout</a></button>
+        <a href="{% url 'checkout' %}" class="btn black-background float-right">Checkout</a>
     </div>
 </div>
 {% endif %}

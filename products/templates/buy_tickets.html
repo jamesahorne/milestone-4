@@ -28,9 +28,9 @@
                     <p>FREE</p>
                     {% endif %}
                     {% if product.name == "Bug" %}
-                    <button><a class="btn" href="{% url 'bug' %}">Add</a></button>
+                    <a class="btn" href="{% url 'bug' %}">Add</a>
                     {% else %}
-                    <button><a class="btn" href="{% url 'add_to_cart' product.id %}">Add</a></button>
+                    <a class="btn" href="{% url 'add_to_cart' product.id %}">Add</a>
                     {% endif %}
                 </div>
             </div>
